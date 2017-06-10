@@ -1,0 +1,104 @@
+\documentclass[12pt,letterpaper,toc=flat,oneside]{book}
+\newcommand{\mytitle}{Joe}
+\def\code{}
+\usepackage{geometry}
+\usepackage{setspace}
+\geometry{top=1in,bottom=1.25in,left=1.25in,right=1.25in}
+\usepackage[pdftex]{graphicx}
+\DeclareGraphicsExtensions{.jpg, .pdf, .png}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage[font={bf,footnotesize},labelsep=period]{caption}
+\usepackage{indentfirst}
+\usepackage{float}
+\usepackage{flafter}
+\usepackage{amssymb,amsmath,amsfonts}
+\usepackage{theorem}
+%\usepackage[square]{natbib}
+\usepackage{varioref} 
+\usepackage{tocbibind} 
+\usepackage{xspace}
+\usepackage{fixltx2e}
+\usepackage{threeparttable}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage[raggedright]{titlesec}
+\usepackage{titletoc}
+\usepackage{ifpdf}
+\usepackage{lastpage}
+\providecommand{\tightlist}{%
+\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\let\proglang=\textsf
+\newcommand{\pkg}[1]{{\fontseries{b}\selectfont #1}}
+%$if(listings)$
+\usepackage{listings}
+\usepackage{color}
+\lstset{ %
+  backgroundcolor=\color{LTgray},  % choose the background color
+  basicstyle=\bf\normalsize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                   % sets the caption-position to bottom
+  commentstyle=\color{blue},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  lineskip=-.5pt,
+  keywordstyle=\color{Green},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  aboveskip=\medskipamount,
+  belowskip=\medskipamount,
+  frame=single,
+  frameround=tttt,
+}
+%$endif$
+\begin{document}
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\belowdisplayskip}{0pt}
+\setlength{\abovedisplayshortskip}{0pt}
+\setlength{\belowdisplayshortskip}{0pt}
+\setlength{\intextsep}{40pt} % Vertical space above & below [h] floats
+\setlength{\textfloatsep}{40pt} % Vertical space below (above) [t] ([b]) floats
+\setlength{\floatsep}{20pt} % Vertical distance between two floats
+\setlength{\abovecaptionskip}{10pt}
+\setlength{\belowcaptionskip}{5pt}
+%\input{Front/myFigures}
+%\input{Front/nomenclature}
+
+%==================================================================
+%    		Flyleaf              
+%==================================================================
+\begin{titlepage}
+	\vfill
+	\begin{center}
+	    \includegraphics[width=2.8in]{images/afitlogo}~\\
+	    \centerline{
+	      \begin{minipage}[t]{4.0in}\singlespace
+		\begin{center} 
+		    {\bf{$if(title)$\MakeUppercase{$title$}$else$A GREAT TITLE$endif$}}  
+		\end{center}
+	      \end{minipage}
+	     }
+	    \vspace*{0.40 in}
+	    \MakeUppercase{thesis}\\[15pt]
+	    $author.name$, $author.rank$\\[-8pt]
+	    $designator$\\[20pt]
+	    \begin{bfseries}
+		\textsf{DEPARTMENT OF THE AIR FORCE}\\
+		\textsf{AIR UNIVERSITY}\\[20pt]
+		\textsl{\Large AIR FORCE INSTITUTE OF TECHNOLOGY}\\[-19pt]
+		\rule{5.8in}{0.8mm}\\[-19pt]
+		\rule{5.8in}{0.3mm}\\[-5pt]
+		\textsf{Wright-Patterson Air Force Base, Ohio}\\[15pt]
+	    \end{bfseries}
+	    $if(distribution)$
+	    \MakeUppercase{\textbf{distribution statement $distribution$.}}\\[-8pt]
+	    \MakeUppercase{approved for public release; distribution unlimited}
+	    $else$
+	    \MakeUppercase{\textbf{distribution statement a.}}\\[-8pt]
+	    \MakeUppercase{Approved for Public Release; distribution unlimited}
+	    $endif$
+	\end{center}%
+	\vfill
+	\newpage 
+	\pagestyle{plain}
+    \end{titlepage}
+\end{document}

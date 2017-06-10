@@ -1,0 +1,272 @@
+\documentclass[12pt,a4paper,oneside]{letter}
+\usepackage{hyperref}
+\usepackage{eforms}
+\usepackage[font={bf,footnotesize},labelsep=period]{caption}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{color}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{wasysym}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{ifthen}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\headrulewidth}{0pt}
+\chead{
+  \ifthenelse{\value{page}=1}{
+    \bf\large{\MakeUppercase{Department of the Air Force}}\\[3pt]
+    \bf\normalsize{\MakeUppercase{Air University (AETC)}}{}}}
+\lhead{
+  \ifthenelse{\value{page}=1}{
+    \hspace{-30pt}
+    \vspace{-15pt}\includegraphics[width=1in]{../images/dodseal.jpg}}{}}
+\addtolength{\headheight}{\baselineskip}
+%\setlength{\topmargin}{1in}
+\addtolength{\voffset}{15pt}
+\setlength{\headsep}{75pt}
+\setlength{\textheight}{600pt}
+\pagenumbering{gobble}
+\begin{document}
+\everyRadioButton{%
+                  \BG{.941 .9 .941}
+                  \symbolchoice{cross}
+                  }%
+\everyTextField{
+            \BC{0.98 0.92 0.73}
+            \BG{0.98 0.92 0.73}
+            \textColor{0 0 0}
+            \textFont{helv} 
+            \textSize{12} 
+            \Q{1}
+            \W{0}
+            } 
+\everySigField{
+            \BC{0.98 0.92 0.73}
+            \BG{0.98 0.92 0.73}
+            \textColor{0 0 0}
+            \textFont{helv} 
+            \textSize{10} 
+            \Q{1}
+            \W{0}
+            } 
+
+\begin{tabular}{r|l}
+\bf{TITLE}& $title$\\[2pt] 
+\bf{AUTHOR}& $if(author.name)$$author.name$$endif$$if(author.rank)$, $author.rank$$endif$\\[2pt]
+\bf{DESIGNATOR}& $if(designator)$$designator$$endif$\\[2pt]
+\bf{DEPARTMENT}& $if(author.department)$$author.department$$endif$\\[2pt]
+\bf{DATE}& $if(date)$$date$$endif$
+\end{tabular}
+
+\vspace{10pt}
+
+\textbf{PART I - To be completed by students requesting limited distribution}\\[-8pt]
+
+1.  I request my document be assigned the following Distribution Statement:
+
+\LARGE
+\begin{tabularx}{\linewidth}{ccX}
+\radioButton{distro}{10bp}{10bp}{B} & 
+\small Distribution Statement B.& 
+\small Distribution authorized to U.S. Government agencies only\\
+\end{tabularx}\\[-25pt]
+
+{%
+\centering
+\begin{tabular}{rlrl}
+    \radioButton{distroB}{10bp}{10bp}{fgi} & 
+    \small Foreign Govt. Info\hspace{75px} &   
+    \radioButton{distroB}{10bp}{10bp}{pre} & 
+    \small Premature Dissemination\\[-10pt]
+    
+    \radioButton{distroB}{10bp}{10bp}{pri} & 
+    \small Proprietary Info\quad\quad      & 
+    \radioButton{distroB}{10bp}{10bp}{aou} & 
+    \small Admin/Operational Use\\[-10pt]
+    
+    \radioButton{distroB}{10bp}{10bp}{cri} & 
+    \small Critical Technology\quad\quad   & 
+    \radioButton{distroB}{10bp}{10bp}{swd} & 
+    \small Software Documentation\\[-10pt]
+    
+    \radioButton{distroB}{10bp}{10bp}{tne} & 
+    \small Test \& Evaluation\quad\quad    & 
+    \radioButton{distroB}{10bp}{10bp}{aut} & 
+    \small Specific Authority\\[-10pt]
+    
+    \radioButton{distroB}{10bp}{10bp}{cpe} & 
+    \small Contractor Perf Eval\quad\quad  & 
+    \radioButton{distroB}{10bp}{10bp}{exp} & 
+    \small Export Controlled
+
+\end{tabular}\par
+}
+\vspace{-10pt}
+
+\LARGE
+\begin{tabularx}{\linewidth}{ccX}
+\radioButton{distro}{10bp}{10bp}{C} & 
+\small Distribution Statement C.    & 
+\small Distribution authorized to U.S. Government agencies and their Contractors 
+\end{tabularx}\\[-25pt]
+
+{%
+\centering
+\begin{tabular}{rlrl}
+    \radioButton{distroB}{10bp}{10bp}{fgi} & 
+    \small Foreign Govt. Info\hspace{75px} &   
+    \radioButton{distroB}{10bp}{10bp}{swd} & 
+    \small Software Documentation \hspace{400sp}\\[-10pt]
+    
+    \radioButton{distroB}{10bp}{10bp}{crt} & 
+    \small Critical Technology\quad\quad   & 
+    \radioButton{distroB}{10bp}{10bp}{aut} & 
+    \small Specific Authority\\[-10pt]
+    
+    \radioButton{distroB}{10bp}{10bp}{aou} & 
+    \small Admin/Operational Use           &
+    \radioButton{distroB}{10bp}{10bp}{exp} & 
+    \small Export Controlled
+
+\end{tabular}\par
+}
+\vspace{-10pt}
+
+\LARGE
+\begin{tabularx}{\linewidth}{ccX}
+\radioButton{distro}{10bp}{10bp}{D} & 
+\small Distribution Statement D.    & 
+\small Distribution authorized to DOD and DOD contractors only 
+\end{tabularx}\\[-25pt]
+
+{%
+\centering
+\begin{tabular}{rlrl}
+    \radioButton{distroB}{10bp}{10bp}{fgi} & 
+    \small Foreign Govt. Info\hspace{75px} &   
+    \radioButton{distroB}{10bp}{10bp}{swd} & 
+    \small Software Documentation \hspace{400sp}\\[-10pt]
+    
+    \radioButton{distroB}{10bp}{10bp}{crt} & 
+    \small Critical Technology &
+    \radioButton{distroB}{10bp}{10bp}{aut} & 
+    \small Specific Authority\\[-10pt]
+    
+    \radioButton{distroB}{10bp}{10bp}{aou} & 
+    \small Admin/Operational Use &
+    \radioButton{distroB}{10bp}{10bp}{exp} & 
+    \small Export Controlled\\[-10pt]
+
+\end{tabular}\par
+}
+\vspace{-10pt}
+
+\LARGE
+\begin{tabularx}{\linewidth}{ccX}
+\radioButton{distro}{10bp}{10bp}{E} & 
+\small Distribution Statement E.    & 
+\small Distribution authorized to DOD components only 
+\end{tabularx}\\[-25pt]
+
+{%
+\centering
+\begin{tabular}{rlrl}
+    \radioButton{distroB}{10bp}{10bp}{fgi} & 
+    \small Foreign Govt. Info\hspace{75px} &   
+    \radioButton{distroB}{10bp}{10bp}{pre} & 
+    \small Premature Dissemination\\[-10pt]
+    
+    \radioButton{distroB}{10bp}{10bp}{pri} & 
+    \small Proprietary Info\quad\quad & 
+    \radioButton{distroB}{10bp}{10bp}{aou} & 
+    \small Admin/Operational Use\\[-10pt]
+    
+    \radioButton{distroB}{10bp}{10bp}{crt} & 
+    \small Critical Technology\quad\quad & 
+    \radioButton{distroB}{10bp}{10bp}{swd} & 
+    \small Software Documentation\\[-10pt]
+    
+    \radioButton{distroB}{10bp}{10bp}{tne} & 
+    \small Test \& Evaluation\quad\quad & 
+    \radioButton{distroB}{10bp}{10bp}{aut} & 
+    \small Specific Authority\\[-10pt]
+    
+    \radioButton{distroB}{10bp}{10bp}{cpe} & 
+    \small Contractor Perf Eval\quad\quad & 
+    \radioButton{distroB}{10bp}{10bp}{exp} & 
+    \small Export Controlled\\[-10pt]
+    
+    \radioButton{distroB}{10bp}{10bp}{dms} & 
+    \small Direct Military Support &  &
+
+\end{tabular}\par
+}
+\vspace{-10pt}
+
+\LARGE
+\begin{tabularx}{\linewidth}{ccX}
+\radioButton{distro}{10bp}{10bp}{F} & 
+\small Distribution Statement F.    & 
+\small Further dissemination only as directed
+\end{tabularx}
+
+\newpage
+
+\normalsize
+2. Rationale for requesting distribution other than Statement A (Be specific e.g. data, citations, etc.)\\[5pt]
+\textField[\Ff{\FfMultiline}\TU{ }\V{ }\Q{0}]{rationale}{\textwidth}{2.5cm}
+
+3.  I have coordinated with $if(release_authority)$\MakeUppercase{\textbf{$release_authority$}}$endif$ and they will serve as the releasing authority for this thesis.  (Other than Statement A)\\
+
+4.  If known, please describe the date and/or condition under which this limited distribution may be changed and what the new distribution statement should be.\\[5pt]
+\textField[\Ff{\FfMultiline}\TU{ }\V{ }\Q{0}]{change}{\textwidth}{2.5cm}
+
+\vspace{20pt}
+
+{%
+\centering
+\begin{tabular}{lcc}
+Research Author & 
+\sigField{authsig}{0.35\textwidth}{1cm} &
+\textField[\TU{ }\V{$if(author.name)$$author.name$$else$Ima B. Smart$endif$}]{authname}{0.35\textwidth}{1cm}
+\end{tabular}\par
+}
+\vspace{15pt}
+
+\textbf{PART II - To be completed by the research advisor and department head}
+
+1st Ind, Research Advisor
+
+Concur.\\[7pt]
+
+{%
+\centering
+\begin{tabular}{lcc}
+Research Advisor & 
+\sigField[\Lock{/Action/All}]{advsig}{0.35\textwidth}{1cm} &
+\textField[\TU{ }\V{$if(advisor)$$advisor$$else$Ima B. Smart$endif$}]{advname}{0.35\textwidth}{1cm}
+\end{tabular}\par
+}
+\vspace{18pt}
+
+2nd Ind, Dept Head 
+
+Approved.\\[7pt]
+
+{%
+\centering
+\begin{tabular}{lcc}
+Department Head & 
+\sigField{headsig}{0.35\textwidth}{1cm} &
+\textField[\TU{ }\V{$if(dept_head)$$dept_head$$else$Ima B. Smart$endif$}]{headname}{0.35\textwidth}{1cm}
+\end{tabular}\par
+}
+
+
+\end{document}
