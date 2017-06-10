@@ -1,0 +1,102 @@
+---
+title: "AFIT ELECTRONIC THESIS PROCESS"
+subtitle: 'Masters Theses & Graduate Research Projects'
+date: "Updated `r format(Sys.Date(), '%d %b %Y')`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{timeline}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+shiny::includeCSS('vignette.css')
+```
+
+# Week 3 - Inform the TPC of an Changes 
+
+- Students, advisors or Department POC will notify the TPC at <a href='mailto:thesis@afit.edu'>thesis@afit.edu</a> of the following:
+
+    - Corrections to the Research Advisor listed on the Projected Graduate spreadsheet
+
+    - Names of students with whom they are doing a group thesis
+
+    - Addition of name(s) to the Projected Graduate List <red>if omitted</red>
+
+    - Removal of name(s) from the Projected Graduate List <red>of students who will not complete their program in the current quarter</red>
+
+# Week 8 - Complete The Thesis Defense
+
+- All Masters Students are required to have their defense completed no later week 8 of their graduating quarter.
+
+# Week 9 - Submit Final Documents
+
+- For Unlimited Distribution Theses & GRP's (Distrbution Statement A)
+
+    - Students will submit their FINAL document and all associated paperwork to their Research Advisor or Department POC
+
+    - All submissions must:
+
+        + Comply with the latest [AFIT Style Guide](http://www.afit.edu/docs/NewAFITStyleGuideJuly2015(2).pdf) 
+
+        + Include a completed SF 298 (located on L drive and incorporated into the document as the last page as well saved as a separate document in student folder)
+
+        + Ensure committee membership page has all committee members listed. 
+
+        + Committee approval signature form with digital signatures placed in student folder. `L:\Thesis-Dissertation\Theses\committee approval signature form (blank).pdf`
+
+        + Completed [WPAFB Form 1420](http://www.wpafb.af.mil/shared/media/document/AFD-160526-016.pdf) with all required digital signatures (Block 10 is student signature; Block 11 is Research Advisor signature; and Block 12 is Department Head/Deputy signature)
+
+- For Limited Distribution Theses & GRP's (Distribution Statements B-F)
+
+    - Students will submit the following documents to their Research Advisor or Department POC <focus>on a labeled CD:</focus>
+
+        - Final thesis/GRP document 
+
+        - Completed distribution Form signed by the research advisor (scan and save as .pdf)
+
+        - Completed SF 298
+
+    - CD labels must include: (label template available in the `forms` folder)
+
+        + Student name
+  
+        + Designator number
+
+        + <u>Complete</u> Distribution Statement
+
+# Week 10 - Submit Documents to the TPC
+
+- Unlimited Distribution theses & GRP's (Distribution Statement A)
+
+    + Research Advisors or Department POC will upload the following documents to the TPC 
+
+        + <focus>FINAL</focus> Thesis/GRP document with completed SF 298 incorporated into the document as the last page 
+
+        + Completed [WPAFB Form 1420](http://www.wpafb.af.mil/shared/media/document/AFD-160526-016.pdf)
+
+    + NOTE: All documents shall be placed in the following directory `L:\Thesis-Dissertation\Student Submissions\'Student department'\'Student Name'`
+
+    + ENV Distance Learning students will submit Thesis/GRP documents through the [Blackboard SENG 799 Final Thesis Submission Tab](https://afit.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_2037686_1&course_id=_9790_1&mode=reset)
+
+    + Research Advisors or Department POC will notify the TPC at <a href='mailto:thesis@afit.edu'>thesis@afit.edu</a> when all documents and forms are uploaded. 
+    
+    + The TPC will wait to be notified that the documents have been uploaded before submitting the request for PA approval
+
+- Limited Distribution theses/GRPs (Distribution Statements B-F)
+
+    - Research Advisors or Department POC will upload the following documents to the TPC 
+
+        + Completed Document Distribution Form 
+
+        + Digital signature page 
+
+    - Note: all documents shall be uploaded to the following directory `L:\Thesis-Dissertation\Student Submissions\'Student Department'\'Student Name'`
+
+    - ENV Distance Learning students will submit Thesis/GRP documents through the [Blackboard SENG 799 Final Thesis Submission Tab](https://afit.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_2037686_1&course_id=_9790_1&mode=reset)
+
+    - Once the documents have been uploaded, research advisors or department POC will notify the TPC at <a href='mailto:thesis@afit.edu'>thesis@afit.edu</a> to set-up an appointment to hand deliver limited document CD for review.
+    
+- Classified Theses/GRPs 
+
+    + Resident students shall contact Mr. John Banks in the D’Azzo Research Library for instructions

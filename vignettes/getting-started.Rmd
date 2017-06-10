@@ -1,0 +1,304 @@
+---
+title: "Adding Features to the Markdown Thesis Template"
+author: "Jason Freels"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{afit_thesis}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+css: 'vignette.css'
+---
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+library(knitcitations)
+library(RefManageR)
+library(xtable)
+source(system.file('rmd','R','setup.R', package = 'AFIT'))
+cite_options(citation_format = 'pandoc', 
+             cite.style = "numeric")
+berger = citet('10.2307/2291285')
+knitc <- citet(citation('knitcitations'))
+```
+
+# Welcome to Markdown!
+
+The purpose of this vignette is threefold:
+
+1) To introduce you to the process of writing documents and presentations in Markdown
+
+2) To demonstrate how you can include several commonly required elements in your thesis document
+
+3) Help troubleshoot several commonly encountered issues 
+
+
+## What is Markdown and Why Should You Use it?
+
+[Markdown](http://daringfireball.net/projects/markdown/) is intended to be as easy-to-read and easy-to-write as is feasible.
+
+All documents have similar components
+
+- Title, authors, headings
+- citations & bibliographies
+- plots
+- images
+- tables
+- quotes
+- acronyms
+- glossary terms
+- symbols
+- equations
+- code chunks
+
+However, different output formats can have very different syntax structures - For example there may be many ways to specify that a string of text is the title
+
+- In HTML - `<title>This is my title</title>`
+
+- In \LaTeX - `\title{This is my title}`
+
+- In MS Word the program does it for you, but the same process is happening behind the scenes
+
+Markdown makes one syntax that can be transformed based on the output that is desired
+
+There are many advantages to building your thesis in Rmarkdown, this paper advantage of `r try(berger)`
+
+For a quick cheatsheet on how to build an Rmarkdown, you can visit <https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf>.
+
+## Code Chunks
+
+## Tables
+
+It's really easy to go from a `matrix` or a `data.frame` to a \LaTeX-style table in under 5 seconds. Here is an example:
+
+```{r, echo=TRUE, results='asis'}
+library(xtable)
+CI <- c('100','99 - 93','92 - 86','85-75','74 - 65','64 - 56','55 - 37','36 - 11','10 - 0')
+rating <- c('Green (+)','Green','Green (-)','Amber (+)','Amber','Amber (-)','Red (+)','Red','Red (+)')
+defn <- c(
+'Entire component section is free of observable distress',
+'No component section serviceability or reliability reduction.
+Some non-critical subcomponents may suffer from slight degradation or few critical subcomponents may suffer from slight degradation',
+'Slight component-section serviceability or reliability reduction.  Some non-critical subcomponents may suffer from slight degradation or more than one critical subcomponents may suffer from slight degradation',
+'Component-section serviceability or reliability is degraded, but adequate.  A very few, critical subcomponents may suffer from moderate deterioration with perhaps a few non-critical subcomponents suffering from severe deterioration',
+'Component-section serviceability or reliability is definitely impaired. Some, but not a majority, critical subcomponents may suffer from moderate deterioration with perhaps a few non-critical subcomponents suffering from severe deterioration',
+'Component-section has significant serviceability or reliability loss. Most subcomponents may suffer from moderate degradation or a few critical subcomponents may suffer from severe degradation',
+'Significant serviceability or reliability reduction in component-section.  A majority of subcomponents are severely degraded and others may have varying degrees of degradation',
+'Severe serviceability or reliability reduction to the component-section such that it is barely able to perform.  Most subcomponents are severely degraded',
+'Overall component-section degradation is total.  Few, if any, subcomponents salvageable.  Complete loss of component-section serviceably')
+rating.table <- data.frame(CI, rating, defn, 
+                           stringsAsFactors = F, 
+                           row.names = NULL)
+colnames(rating.table) <- c('CI Value','Rating','Rating Definition')
+xrt <- xtable(rating.table, 
+              align=c('l','l|','l|','p{4in}'),
+              caption = 'Direct Survey Rating Criteria (United States ARMY Corps of Engineers, 2015b; Uzarski and Grussing, 2006)')
+print(xrt, 
+      comment = F, 
+      include.rownames = F, 
+      hline.after = c(-1,0,1:nrow(xrt)),
+      label = 'tab:ratings', 
+      caption.placement = 'top', 
+      caption.width = '4in')
+```
+Each column of the table is created and stored as an individual vector. Those vectors are then combined to create a `data.frame`. This table was made using a package called *xtable*.
+
+For information on how to build a table in R, you can visit <http://www.cyclismo.org/tutorial/R/tables.html>. The following resource will get you started on how to get your table in R ready for publication <https://www.r-bloggers.com/making-publication-ready-tables-with-xtable/>.
+
+## Plots
+
+Plots are a useful way to display data. Building plots in R is quick and easy. The following is an example using the data set **mtcars**.
+
+```{r, echo=FALSE}
+plot(x = mtcars$mpg,
+     y = mtcars$hp,
+     main = "Scatterplot",
+     xlab = "Miles per Gallon", 
+     ylab = "Horse Power", 
+     col = "blue")
+```
+
+For a detailed and in depth desriptions on how to make plots, and the different kinds that R is capable of creating, you can visit <http://www.statmethods.net/graphs/scatterplot.html>.
+
+The ggplot2 package has the ability to offer many more plotting options than the **plot()** command. You can learn more about ggplot2 by going to <http://docs.ggplot2.org/current/ggplot.html>. Creating a plot with ggplot2 will allow you to add layers of data to a single plot, which can be helpful in certain situations.
+
+## Text
+
+Markdown allows you to add italics, bold, and create headers just like Word, only without the toolbar. Everything is done in place. Lets look at a few basic examples:
+
+- Emphasis, aka italics, with *asterisks* or _underscores_.
+
+- Strong emphasis, aka bold, with **asterisks** or __underscores__.
+
+- Combined emphasis with **asterisks and _underscores_**.
+
+- Strikethrough uses two tildes. ~~Scratch this.~~
+
+You can find this and more by visiting <https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet>. It is a great source for learning how to do many things in a markdown document.
+
+## Equations
+
+In-line equations are included within a line of text like this $A=\pi*r^2$. This is how you would type it into markdown:
+
+In order to have it print correctly in markdown you should not have any spaces when using this form. If you want the equation to stand alone in a seperate line, it should be typed into markdown using one of the following forms:
+
+$$
+\begin{equation}
+  A=\pi*r^2
+\end{equation}
+$$
+
+In this next example we will use some sample data to display a scatter plot and then show you how you can print the summary data into a form suitible for markdown. First we will create the data and display the plot.
+
+```{r, fig.cap='A simple regression model plot'}
+N <- 30
+Y <- rnorm(n = N, sd = 1, mean = 0)
+X <- rnorm(n = N, sd = 1, mean = 0)
+plot(x = sort(X),
+     y = sort(Y), 
+     pch = 16,
+     col = 'red',
+     cex = 1.5,
+     las = 1)
+```
+
+In this next code chunk we are telling R how to analyze the data and then using the `print` command to display the data. As you can see in the next code chunk, we use the computed variables the R stores to display the finished equation.
+
+```{r, results='asis'}
+model  <- lm(Y~X)
+xmodel <- xtable(summary(model), 
+                 caption = 'Summary of Model')
+print(xmodel, comment = F,
+      include.rownames = F,
+      caption.placement = 'top')
+```
+
+$$\bar{Y}=\frac{\sum_{i=1}^N Y_i}{N}=\frac{`r sum(Y)`}{`r N`}$$
+
+To learn more about printing equations in a markdown document using latex code, you can visit <http://www.statpower.net/Content/310/R%20Stuff/SampleMarkdown.html>. 
+
+## Code Chunks
+
+R gives you the ability to show the code that that was used for any plot, table, or function. You start a code chunk with **```{r}** and end a code chunk with **```**. Let's use the code chunk for building plots above as an example of what you would see in a code chunk.
+
+```{r, eval=FALSE}
+plot(mtcars$mpg,mtcars$hp,
+     main="Scatterplot",
+     xlab="Miles per Gallon", ylab="Horse Power", col="blue")
+```
+
+## Chunk Options
+
+Code chunks have many options. You might choose to display a code chunk, like above. To do that you would add **eval=FALSE**. It would look like this **```{r, eval=FALSE}**. For the purpose of displaying a plot you would add **echo=FALSE** in which case the code chunk would not be displayed at all. For a function, adding **echo=FALSE** would print only the answer to the function. For the function **2 + 2**, it would look like this:
+
+```{r,echo=FALSE}
+2+2
+```
+
+Adding a caption to a pigure or image is as easy as adding this **```{r, fig.cap='A simple regression model plot'}**.
+
+
+```{r, eval=FALSE, fig.cap='A simple regression model plot'}
+plot(mtcars$mpg,mtcars$hp,
+     main="Scatterplot",
+     xlab="Miles per Gallon", ylab="Horse Power", col="blue")
+```
+
+For a complete list of code chunk option, you can visit <http://rmarkdown.rstudio.com/authoring_rcodechunks.html>.
+
+## Headings
+
+Headers are also a common thing and very easy to do in markdown. Here is an example of how you would make a heading.
+
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+
+In R, adding a # will create a line of code that is skipped over and is a great way to add comments. In markdown, adding a # before text creates a heading. You can find this and more by visiting <https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet>. It is a great source for learning how to do many things in a markdown document.
+
+## Quotes
+
+Adding a quote is simple and useful tool. Here is an example of how you add a quote to a markdown document.
+
+
+> Blockquotes are very handy.
+> This line is part of the same quote.
+
+Quote break.
+
+> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
+
+You can find this and more by visiting <https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet>. It is a great source for learning how to do many things in a markdown document.
+
+## Bibliography
+
+The purpose of this is to show stuff to you. And I want to show you some really cool stuff.
+
+## Symbols
+
+The purpose of this is to show stuff to you. And I want to show you some really cool stuff.
+
+## Images
+
+There are two ways to add a picture to a markdown document. The first is by doing it in-line. This refers to referencing the picture right where you want it in the text. It would look something like this:
+
+Here is the logo for R. If you hover your mouse over it in an HTML document you could see an HTLM caption
+
+Another way to add a picture would be to reference it. You can do this by naming the picture and then calling the name. This would be useful if you planned on using a picture over and over again. It would look like this:
+
+
+You can find this and more by visiting <https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet>. It is a great source for learning how to do many things in a markdown document.
+
+## Acronyms
+
+The purpose of this is to show stuff to you. And I want to show you some really cool stuff.
+
+## Glossary
+
+The purpose of this is to show stuff to you. And I want to show you some really cool stuff.
+
+This template demonstrates some of the basic latex you'll need to know to create a JSS article.
+
+## Code formatting
+
+Don't use markdown, instead use the more precise latex commands:
+
+* \proglang{Java}
+* \pkg{plyr}
+* \code{print("abc")}
+
+### R code
+
+> This is a quote in markdown
+
+Paragraph.
+
+\begin{quote}
+This is a quote in \LaTeX
+\end{quote}
+
+Can be inserted in regular R markdown blocks.
+
+```{r, fig.cap='A first plot'}
+plot(rnorm(100), col = 2, pch = 16, las = 1)
+```
+
+# Literature Review
+
+## Citing published journal articles
+
+Published articles have a [Digital Object Identifier](http://www.doi.org/), or doi associated with them.  The `knitcitations` package allows us to easily cite papers by simply providing the doi.  __Note: This requires an internet connection__ 
+
+## Citing published books with an ISBN
+
+ISBN
+
+# Methodology
+
+The purpose of this is to show stuff to you. And I want to show you some really cool stuff.
+
+# Analysis And Results
+
+The purpose of this is to show stuff to you. And I want to show you some really cool stuff.
