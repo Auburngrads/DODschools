@@ -2,13 +2,11 @@
 #' 
 #' @importFrom RefManageR BibEntry
 #' @importFrom RCurl getURL
-#' @importFrom XML htmlTreeParse
-#' @importFrom XML xpathSApply
-#' @importFrom XML xmlValue
+#' @importFrom XML htmlTreeParse xpathSApply xmlValue
 #'
 #' @param isbn An international standard book number (ISBN-13 or ISBN-10)
 #' @param preview If \code{TRUE}, the bibentry is printed to the screen via \code{cat}
-#' @param bibtype The type of bibliographic element. See \code{details}
+#' @param bibtype The type of bibliographic element. (see \code{details})
 #' @param key The bibtex key for the bibentry
 #' @param author The author for the bibentry
 #' @param title The title for the bibentry
@@ -23,8 +21,6 @@
 #' @source http://www.ottobib.com/
 #' @details \code{isbn} may contain dashes
 #' @export
-
-
 citeISBN <- function(isbn = NULL, preview = TRUE, bibtype = NULL, key = NULL, author = NULL,
                      title = NULL, publisher = NULL, year = NULL, address = NULL,
                      style = 'bibtex',...) {

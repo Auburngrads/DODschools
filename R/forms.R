@@ -31,17 +31,12 @@ public_affairs <- function(...,
                            md_extensions = c("-autolink_bare_uris"),
                            fig_caption = FALSE,
                            toc = FALSE,
-                           template = "PAform.tex",
-                           format = "afit_prospectus") {
+                           template = "PAform.tex") {
   
-   #eforms <- rmarkdown::pandoc_path_arg(system.file('rmd','tex','eforms.sty', package = 'AFIT'))
-   #eforms <- rmarkdown::includes(in_header = eforms)
-   #eforms <- rmarkdown::pandoc_include_args(in_header = eforms)
+   pa_form <- system.file("rmd", "tex", template, package = "DODschools")
+  
    rmarkdown::pdf_document(...,
-                           template = system.file("rmd", 
-                                                  "tex", 
-                                                  template,
-                                                  package = "AFIT"),
+                           template = pa_form,
                            fig_caption = fig_caption,
                            keep_tex = keep_tex,
                            toc = toc,
@@ -76,16 +71,13 @@ distro_form <- function(...,
                         md_extensions = c("-autolink_bare_uris"),
                         template = "distroForm.tex") {
   
-#eforms <- rmarkdown::pandoc_path_arg(system.file('rmd','tex','eforms.sty', package = 'AFIT'))
+  
+  disto <- system.file("rmd", "tex", template, package = "DODschools")
   
 rmarkdown::pdf_document(...,
-                        template = system.file("rmd", 
-                                               "tex", 
-                                               template,
-                                               package = "AFIT"),
+                        template = distro,
                         keep_tex = keep_tex,
                         pandoc_args = c('--listings'))
-                        #includes = rmarkdown::includes(in_header = eforms))
 }
 
 
@@ -117,16 +109,12 @@ sf298 <- function(...,
                   md_extensions = c("-autolink_bare_uris"),
                   template = "sf298.tex") {
 
-#eforms <- rmarkdown::pandoc_path_arg(system.file('rmd','tex','eforms.sty', package = 'AFIT'))
-
+  sf298_form <- system.file("rmd", "tex", template, package = "DODschools")
+  
 rmarkdown::pdf_document(...,
-                        template = system.file("rmd", 
-                                               "tex", 
-                                               template,
-                                               package = "AFIT"),
+                        template = sf298_form,
                         keep_tex = keep_tex,
                         pandoc_args = c('--listings'))
-                        #includes = rmarkdown::includes(in_header = eforms))
 }
 
 
@@ -158,16 +146,12 @@ signature_form <- function(...,
                   md_extensions = c("-autolink_bare_uris"),
                   template = "signatureForm.tex") {
 
-#eforms <- rmarkdown::pandoc_path_arg(system.file('rmd','tex','eforms.sty', package = 'AFIT'))
-
+  sig_form <- system.file("rmd", "tex", template, package = "DODschools")
+  
 rmarkdown::pdf_document(...,
-                        template = system.file("rmd", 
-                                               "tex", 
-                                               template,
-                                               package = "AFIT"),
+                        template = sig_form,
                         keep_tex = keep_tex,
                         pandoc_args = c('--listings'))
-                        #includes = rmarkdown::includes(in_header = eforms))
 }
 
 
@@ -199,16 +183,12 @@ training_report <- function(...,
                   md_extensions = c("-autolink_bare_uris"),
                   template = "trainingReport.tex") {
   
-#eforms <- rmarkdown::pandoc_path_arg(system.file('rmd','tex','eforms.sty', package = 'AFIT'))
+  tr_form <- system.file("rmd", "tex", template, package = "DODschools")
   
 rmarkdown::pdf_document(...,
-                        template = system.file("rmd", 
-                                               "tex", 
-                                               template,
-                                               package = "AFIT"),
+                        template = tr_form,
                         keep_tex = keep_tex,
                         pandoc_args = c('--listings'))
-                        #includes = includes(in_header = eforms))
 }
 
 
@@ -221,11 +201,11 @@ buildForms <- function(yml = 'metadata.yml',which = NULL,...) {
   outdir  <- paste(c(dirname(yml),'forms'), collapse = '/')
   
   forms <- list(
-  sf298  <- system.file('rmd','forms','sf298.Rmd', package = 'AFIT'),
-  distro <- system.file('rmd','forms','distributionForm.Rmd', package = 'AFIT'),
-  public <- system.file('rmd','forms','PAform.Rmd', package = 'AFIT'),
-  signit <- system.file('rmd','forms','signatureForm.Rmd', package = 'AFIT'),
-  report <- system.file('rmd','forms','trainingReport.Rmd', package = 'AFIT'))
+  sf298  <- system.file('rmd','forms','sf298.Rmd', package = 'DODschools'),
+  distro <- system.file('rmd','forms','distributionForm.Rmd', package = 'DODschools'),
+  public <- system.file('rmd','forms','PAform.Rmd', package = 'DODschools'),
+  signit <- system.file('rmd','forms','signatureForm.Rmd', package = 'DODschools'),
+  report <- system.file('rmd','forms','trainingReport.Rmd', package = 'DODschools'))
   
   if(!is.null(which)) {
     

@@ -5,15 +5,14 @@
 #' @description This function from to complete an AFIT Thesis, the
 #' @export
 #' 
-style_guide <- function(school = 'afit' ) {
+style_guide <- function(school = 'afit') {
 
   if(tolower(school)=='afit') {
     
    utils::browseURL(system.file('rmd', 
                                 'afit_style_guide_2015.pdf',
-                                package = 'AFIT'))
+                                package = 'DODschools'))
   }
-
 }
 
 

@@ -1,8 +1,8 @@
 #' Air Force Institute of Technology Thesis Template 
 #'
-#' Format for creating an AFIT theses
+#' @description Create an AFIT thesis using rmarkdown
 #' 
-#' Adapted from the STYLE GUIDE FOR AFIT DISSERTATIONS, THESES AND GRADUATE RESEARCH PAPERS - July 2015
+#' @source STYLE GUIDE FOR AFIT DISSERTATIONS, THESES AND GRADUATE RESEARCH PAPERS - July 2015
 #'
 #' @param ... Arguments to \code{rmarkdown::pdf_document}
 #' @param keep_tex Should the raw TeX files be kept?
@@ -20,7 +20,7 @@
 #' @examples
 #'
 #' \dontrun{
-#' rmarkdown::draft("MyThesis.Rmd", template = "afit_thesis", package = "AFIT")
+#' rmarkdown::draft("MyThesis.Rmd", template = "afit_thesis", package = "DODSchools")
 #' }
 #'
 #' @seealso \code{\link{style_guide(school = 'afit')}}
@@ -34,17 +34,15 @@ afit_thesis <- function(...,
                         template = "templateb.tex",
                         format = "afit_thesis") {
   
-  # thesis <- system.file("rmarkdown",
-  #                       'templates',
-  #                       format,
-  #                       'resources',
-  #                       'afitThesis2.sty',
-  #                       package = 'AFIT')
+  thesis <- system.file("rmarkdown",
+                        'templates',
+                        format,
+                        'resources',
+                        template,
+                        package = "DODschools")
   
   rmarkdown::pdf_document(...,
-                          template = system.file("rmarkdown",'templates',
-                                                 format,'resources',template,
-                          package = "AFIT"),
+                          template = thesis,
                           fig_caption = fig_caption,
                           keep_tex = keep_tex,
                           toc = toc,

@@ -2,9 +2,7 @@
 #' 
 #' @importFrom knitcitations greycite
 #' @importFrom RCurl getURL
-#' @importFrom XML htmlTreeParse
-#' @importFrom XML xpathSApply
-#' @importFrom XML xmlValue
+#' @importFrom XML htmlTreeParse xpathSApply xmlValue
 #'
 #' @param designator An AFIT thesis or dissertation designator number
 #' @param access_num The DTIC access number
@@ -54,4 +52,3 @@ citeDTIC <- function(designator = 'AFIT-ENS-DS-13-D-02', access_num = NULL,...) 
   
   return(entry)
 }
-

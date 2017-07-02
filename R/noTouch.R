@@ -1,10 +1,10 @@
-#' Extract YAML data from metadata.yml
+#' Extract YAML metadata from metadata.yml
 #'
-#' @param file Path to the YAML file
+#' @param file Path to the metadata.yaml file
 #'
-#' @importFrom yaml yaml.load_file
+#' @importFrom yaml yaml.load_file as.yaml
+#' @export
 #' 
-
 noTouch <- function(file = NULL) {
   
   yaml <- yaml::yaml.load_file(file)
