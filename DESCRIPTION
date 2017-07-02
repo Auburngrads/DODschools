@@ -1,8 +1,8 @@
-Package: AFIT
+Package: DODschools
 Type: Package
-Title: Rmarkdown Templates For Academic Documents at Department of Defense Schools
-Version: 1.0
-Date: 2017-01-08
+Title: Academic Documents Templates for Department of Defense Schools
+Version: 1.0.0
+Date: 2017-07-02
 Authors@R: c(
     person("Jason", "Freels" , , "auburngrads@live.edu"  , role = c("aut", "cre")),
     person("Corey", "Degroot", , "corey.degroot@us.af.mil", role = "ctb"),
@@ -21,7 +21,19 @@ Description:
 License: MIT + file LICENSE
 Archs: i386, x64
 Depends: R (>= 3.1.0)
-Imports: utils,yaml,rmarkdown,knitr,RCurl,RefManageR,XML,knitcitations,shiny,xtable
+Imports: utils, 
+         yaml,
+         rmarkdown,
+         knitr,
+         RCurl,
+         RefManageR,
+         XML,
+         knitcitations,
+         shiny,
+         xtable
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
 NeedsCompilation: no
+URL: https://github.com/Auburngrads/DODschools
+BugReports: https://github.com/Auburngrads/DODschools/issues
+Encoding: UTF-8
