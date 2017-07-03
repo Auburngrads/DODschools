@@ -1,6 +1,6 @@
 Package: DODschools
 Type: Package
-Title: Academic Documents Templates for Department of Defense Schools
+Title: Academic Document Templates for Department of Defense Schools
 Version: 1.0.0
 Date: 2017-07-02
 Authors@R: c(
