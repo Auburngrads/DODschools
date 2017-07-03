@@ -20,7 +20,7 @@
 #' @examples
 #'
 #' \dontrun{
-#' rmarkdown::draft("MyThesis.Rmd", template = "afit_thesis", package = "DODSchools")
+#' rmarkdown::draft("MyThesis.Rmd", template = "afit_thesis", package = "DODschools")
 #' }
 #'
 #' @seealso \code{\link{style_guide(school = 'afit')}}

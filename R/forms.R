@@ -192,11 +192,19 @@ rmarkdown::pdf_document(...,
 }
 
 
-buildForms <- function(yml = 'metadata.yml',which = NULL,...) {
+#' Build one or more forms
+#'   
+#' @param yml \code{character} Path to the metadata.yml file
+#' @param which \code{numeric} Which form to build. If \code{NULL} all forms are built. 
+#'
+#' @importFrom rmarkdown render
+#' @export
+#' 
+buildForms <- function(yml = 'metadata.yml', which = NULL,...) {
 
   meta <- readLines(yml)
   meta <- unlist(lapply(meta, FUN = function(x) {gsub('\"', "'", x)}))
-  writeLines(meta, con = system.file('rmd','forms','metadata.yml', package = 'AFIT'))
+  writeLines(meta, con = system.file('rmd','forms','metadata.yml', package = 'DODschools'))
   
   outdir  <- paste(c(dirname(yml),'forms'), collapse = '/')
   

@@ -4,7 +4,7 @@
 #'
 #' @importFrom yaml yaml.load_file as.yaml
 #' @export
-#' 
+#'
 noTouch <- function(file = NULL) {
   
   yaml <- yaml::yaml.load_file(file)
