@@ -2,13 +2,13 @@
 % Please edit documentation in R/noTouch.R
 \name{noTouch}
 \alias{noTouch}
-\title{Extract YAML data from metadata.yml}
+\title{Extract YAML metadata from metadata.yml}
 \usage{
 noTouch(file = NULL)
 }
 \arguments{
-\item{file}{Path to the YAML file}
+\item{file}{Path to the metadata.yaml file}
 }
 \description{
-Extract YAML data from metadata.yml
+Extract YAML metadata from metadata.yml
 }

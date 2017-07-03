@@ -16,7 +16,7 @@ citeISBN(isbn = NULL, preview = TRUE, bibtype = NULL, key = NULL,
 
 \item{preview}{If \code{TRUE}, the bibentry is printed to the screen via \code{cat}}
 
-\item{bibtype}{The type of bibliographic element. See \code{details}}
+\item{bibtype}{The type of bibliographic element. (see \code{details})}
 
 \item{key}{The bibtex key for the bibentry}
 

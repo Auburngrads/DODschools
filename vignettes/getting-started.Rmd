@@ -31,6 +31,8 @@ The purpose of this vignette is threefold:
 
 3) Help troubleshoot several commonly encountered issues 
 
+Update Perl - preferably Strawberry Perl
+Update LaTeX - MikTeX or MacTeX
 
 ## What is Markdown and Why Should You Use it?
 

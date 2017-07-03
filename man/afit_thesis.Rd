@@ -3,6 +3,9 @@
 \name{afit_thesis}
 \alias{afit_thesis}
 \title{Air Force Institute of Technology Thesis Template}
+\source{
+STYLE GUIDE FOR AFIT DISSERTATIONS, THESES AND GRADUATE RESEARCH PAPERS - July 2015
+}
 \usage{
 afit_thesis(..., keep_tex = FALSE, md_extensions = c("-autolink_bare_uris"),
   fig_caption = TRUE, toc = TRUE, template = "templateb.tex",
@@ -27,15 +30,12 @@ afit_thesis(..., keep_tex = FALSE, md_extensions = c("-autolink_bare_uris"),
 R Markdown output format to pass to \code{\link[rmarkdown:render]{render}}
 }
 \description{
-Format for creating an AFIT theses
-}
-\details{
-Adapted from the STYLE GUIDE FOR AFIT DISSERTATIONS, THESES AND GRADUATE RESEARCH PAPERS - July 2015
+Create an AFIT thesis using rmarkdown
 }
 \examples{
 
 \dontrun{
-rmarkdown::draft("MyThesis.Rmd", template = "afit_thesis", package = "AFIT")
+rmarkdown::draft("MyThesis.Rmd", template = "afit_thesis", package = "DODschools")
 }
 
 }

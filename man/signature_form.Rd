@@ -24,7 +24,6 @@ Format for creating the initial pages of AFIT theses, dissertations, and reports
 }
 \details{
 Adapted from the STYLE GUIDE FOR AFIT DISSERTATIONS, THESES AND GRADUATE RESEARCH PAPERS - July 2015
-\href{http://www.afit.edu/docs/NewAFITStyleGuideJuly2015(2).pdf}{http://www.afit.edu/docs/NewAFITStyleGuideJuly2015(2).pdf}
 }
 \examples{
 

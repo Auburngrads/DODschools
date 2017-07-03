@@ -6,7 +6,7 @@
 \usage{
 public_affairs(..., keep_tex = FALSE,
   md_extensions = c("-autolink_bare_uris"), fig_caption = FALSE,
-  toc = FALSE, template = "PAform.tex", format = "afit_prospectus")
+  toc = FALSE, template = "PAform.tex")
 }
 \arguments{
 \item{...}{Arguments to \code{rmarkdown::pdf_document}}
@@ -31,7 +31,6 @@ Format for creating the initial pages of AFIT theses, dissertations, and reports
 }
 \details{
 Adapted from the STYLE GUIDE FOR AFIT DISSERTATIONS, THESES AND GRADUATE RESEARCH PAPERS - July 2015
-\href{http://www.afit.edu/docs/NewAFITStyleGuideJuly2015(2).pdf}{http://www.afit.edu/docs/NewAFITStyleGuideJuly2015(2).pdf}
 }
 \examples{
 
