@@ -1,8 +1,4 @@
-#' Air Force Institute of Technology Prospectus Template 
-#'
-#' Format for creating the initial pages of AFIT theses, dissertations, and reports.
-#' 
-#' Adapted from the STYLE GUIDE FOR AFIT DISSERTATIONS, THESES AND GRADUATE RESEARCH PAPERS - July 2015
+#' Air Force Public Affairs Review Form 
 #'
 #' @param ... Arguments to \code{rmarkdown::pdf_document}
 #' @param keep_tex Should the raw TeX files be kept?
@@ -10,22 +6,10 @@
 #' @param fig_caption Should figure captions be enabled?
 #' @param toc Should a table of contents be created?
 #' @param template The TeX template used
-#' @param format The format of the document
 #'
 #' @return R Markdown output format to pass to \code{\link[rmarkdown:render]{render}}
 #'
 #' @importFrom rmarkdown pdf_document
-#' @importFrom rmarkdown pandoc_highlight_args
-#' @importFrom rmarkdown pandoc_path_arg
-#' @importFrom rmarkdown includes
-#' @importFrom rmarkdown includes_to_pandoc_args
-#' @examples
-#'
-#' \dontrun{
-#' rmarkdown::draft("MyThesis.Rmd", template = "afit_prospectus", package = "AFIT")
-#' }
-#'
-#' @export
 public_affairs <- function(...,
                            keep_tex = FALSE,
                            md_extensions = c("-autolink_bare_uris"),
@@ -43,11 +27,7 @@ public_affairs <- function(...,
                            pandoc_args = c('--listings'))
 }
 
-#' Air Force Institute of Technology Prospectus Template 
-#'
-#' Format for creating the initial pages of AFIT theses, dissertations, and reports.
-#' 
-#' Adapted from the STYLE GUIDE FOR AFIT DISSERTATIONS, THESES AND GRADUATE RESEARCH PAPERS - July 2015
+#' Air Force Document Distribution Statement Form 
 #'
 #' @param ... Arguments to \code{rmarkdown::pdf_document}
 #' @param keep_tex Should the raw TeX files be kept?
@@ -57,22 +37,13 @@ public_affairs <- function(...,
 #' @return R Markdown output format to pass to \code{\link[rmarkdown:render]{render}}
 #'
 #' @importFrom rmarkdown pdf_document
-#' @importFrom rmarkdown pandoc_highlight_args
-#' @importFrom rmarkdown pandoc_path_arg
-#' @examples
-#'
-#' \dontrun{
-#' rmarkdown::draft("MyThesis.Rmd", template = "afit_prospectus", package = "AFIT")
-#' }
-#'
-#' @export
 distro_form <- function(...,
                         keep_tex = FALSE,
                         md_extensions = c("-autolink_bare_uris"),
                         template = "distroForm.tex") {
   
   
-  disto <- system.file("rmd", "tex", template, package = "DODschools")
+  distro <- system.file("rmd", "tex", template, package = "DODschools")
   
 rmarkdown::pdf_document(...,
                         template = distro,
@@ -81,11 +52,7 @@ rmarkdown::pdf_document(...,
 }
 
 
-#' Air Force Institute of Technology Prospectus Template 
-#'
-#' Format for creating the initial pages of AFIT theses, dissertations, and reports.
-#' 
-#' Adapted from the STYLE GUIDE FOR AFIT DISSERTATIONS, THESES AND GRADUATE RESEARCH PAPERS - July 2015
+#' Air Force Form SF 298 
 #'
 #' @param ... Arguments to \code{rmarkdown::pdf_document}
 #' @param keep_tex Should the raw TeX files be kept?
@@ -95,15 +62,6 @@ rmarkdown::pdf_document(...,
 #' @return R Markdown output format to pass to \code{\link[rmarkdown:render]{render}}
 #'
 #' @importFrom rmarkdown pdf_document
-#' @importFrom rmarkdown pandoc_highlight_args
-#' @importFrom rmarkdown pandoc_path_arg
-#' @examples
-#'
-#' \dontrun{
-#' rmarkdown::draft("MyThesis.Rmd", template = "afit_prospectus", package = "AFIT")
-#' }
-#'
-#' @export
 sf298 <- function(...,
                   keep_tex = FALSE,
                   md_extensions = c("-autolink_bare_uris"),
@@ -118,11 +76,7 @@ rmarkdown::pdf_document(...,
 }
 
 
-#' Air Force Institute of Technology Prospectus Template 
-#'
-#' Format for creating the initial pages of AFIT theses, dissertations, and reports.
-#' 
-#' Adapted from the STYLE GUIDE FOR AFIT DISSERTATIONS, THESES AND GRADUATE RESEARCH PAPERS - July 2015
+#' Air Force Thesis Electronic Signature Form 
 #'
 #' @param ... Arguments to \code{rmarkdown::pdf_document}
 #' @param keep_tex Should the raw TeX files be kept?
@@ -132,15 +86,6 @@ rmarkdown::pdf_document(...,
 #' @return R Markdown output format to pass to \code{\link[rmarkdown:render]{render}}
 #'
 #' @importFrom rmarkdown pdf_document
-#' @importFrom rmarkdown pandoc_highlight_args
-#' @importFrom rmarkdown pandoc_path_arg
-#' @examples
-#'
-#' \dontrun{
-#' rmarkdown::draft("MyThesis.Rmd", template = "afit_prospectus", package = "AFIT")
-#' }
-#'
-#' @export
 signature_form <- function(...,
                   keep_tex = FALSE,
                   md_extensions = c("-autolink_bare_uris"),
@@ -155,11 +100,7 @@ rmarkdown::pdf_document(...,
 }
 
 
-#' Air Force Institute of Technology Prospectus Template 
-#'
-#' Format for creating the initial pages of AFIT theses, dissertations, and reports.
-#' 
-#' Adapted from the STYLE GUIDE FOR AFIT DISSERTATIONS, THESES AND GRADUATE RESEARCH PAPERS - July 2015
+#' Air Force Training Report 
 #'
 #' @param ... Arguments to \code{rmarkdown::pdf_document}
 #' @param keep_tex Should the raw TeX files be kept?
@@ -169,15 +110,6 @@ rmarkdown::pdf_document(...,
 #' @return R Markdown output format to pass to \code{\link[rmarkdown:render]{render}}
 #'
 #' @importFrom rmarkdown pdf_document
-#' @importFrom rmarkdown pandoc_highlight_args
-#' @importFrom rmarkdown pandoc_path_arg
-#' @examples
-#'
-#' \dontrun{
-#' rmarkdown::draft("MyThesis.Rmd", template = "afit_prospectus", package = "AFIT")
-#' }
-#'
-#' @export
 training_report <- function(...,
                   keep_tex = FALSE,
                   md_extensions = c("-autolink_bare_uris"),
@@ -192,36 +124,43 @@ rmarkdown::pdf_document(...,
 }
 
 
-#' Build one or more forms
+#' Build one or more administrative forms
 #'   
 #' @param yml \code{character} Path to the metadata.yml file
-#' @param which \code{numeric} Which form to build. If \code{NULL} all forms are built. 
+#' @param which A \code{numeric} designator for the form to be built. If \code{NULL} all forms are built. (see details) 
 #'
+#' @details The \code{which} argument accepts integer values from one (1) to five (5) 
 #' @importFrom rmarkdown render
-#' @export
 #' 
+#' @export
 buildForms <- function(yml = 'metadata.yml', which = NULL,...) {
 
-  meta <- readLines(yml)
-  meta <- unlist(lapply(meta, FUN = function(x) {gsub('\"', "'", x)}))
-  writeLines(meta, con = system.file('rmd','forms','metadata.yml', package = 'DODschools'))
+  meta <- lapply(  X = readLines(yml), 
+                 FUN = function(x) gsub('\"', "'", x))
   
-  outdir  <- paste(c(dirname(yml),'forms'), collapse = '/')
+  writeLines(text = unlist(meta), 
+             con  = system.file('rmd','forms','metadata.yml', package = 'DODschools'))
+  
+  outdir  <- file.path(dirname(yml),'forms')
   
   forms <- list(
-  sf298  <- system.file('rmd','forms','sf298.Rmd', package = 'DODschools'),
+  sf298  <- system.file('rmd','forms','sf298.Rmd',            package = 'DODschools'),
   distro <- system.file('rmd','forms','distributionForm.Rmd', package = 'DODschools'),
-  public <- system.file('rmd','forms','PAform.Rmd', package = 'DODschools'),
-  signit <- system.file('rmd','forms','signatureForm.Rmd', package = 'DODschools'),
-  report <- system.file('rmd','forms','trainingReport.Rmd', package = 'DODschools'))
+  public <- system.file('rmd','forms','PAform.Rmd',           package = 'DODschools'),
+  signit <- system.file('rmd','forms','signatureForm.Rmd',    package = 'DODschools'),
+  report <- system.file('rmd','forms','trainingReport.Rmd',   package = 'DODschools'))
+  
   
   if(!is.null(which)) {
     
-    rmarkdown::render(input = forms[[which]], output_dir = outdir)
+    if(!is.numeric(which) | which > 5 | which < 1) stop('Argument must be an integer between 1 & 5')
+    
+    rmarkdown::render(input = forms[[as.integer(which)]], output_dir = outdir)
     
   } else {
       
-    lapply(forms, FUN = function(x) {rmarkdown::render(x, output_dir = outdir)})
+    lapply(  X = forms, 
+           FUN = function(x) rmarkdown::render(x, output_dir = outdir))
   
   }
   
