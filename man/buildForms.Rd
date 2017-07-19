@@ -2,15 +2,18 @@
 % Please edit documentation in R/forms.R
 \name{buildForms}
 \alias{buildForms}
-\title{Build one or more forms}
+\title{Build one or more administrative forms}
 \usage{
 buildForms(yml = "metadata.yml", which = NULL, ...)
 }
 \arguments{
 \item{yml}{\code{character} Path to the metadata.yml file}
 
-\item{which}{\code{numeric} Which form to build. If \code{NULL} all forms are built.}
+\item{which}{A \code{numeric} designator for the form to be built. If \code{NULL} all forms are built. (see details)}
 }
 \description{
-Build one or more forms
+Build one or more administrative forms
+}
+\details{
+The \code{which} argument accepts integer values from one (1) to five (5)
 }

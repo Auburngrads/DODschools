@@ -2,7 +2,7 @@
 % Please edit documentation in R/forms.R
 \name{sf298}
 \alias{sf298}
-\title{Air Force Institute of Technology Prospectus Template}
+\title{Air Force Form SF 298}
 \usage{
 sf298(..., keep_tex = FALSE, md_extensions = c("-autolink_bare_uris"),
   template = "sf298.tex")
@@ -20,15 +20,5 @@ sf298(..., keep_tex = FALSE, md_extensions = c("-autolink_bare_uris"),
 R Markdown output format to pass to \code{\link[rmarkdown:render]{render}}
 }
 \description{
-Format for creating the initial pages of AFIT theses, dissertations, and reports.
-}
-\details{
-Adapted from the STYLE GUIDE FOR AFIT DISSERTATIONS, THESES AND GRADUATE RESEARCH PAPERS - July 2015
-}
-\examples{
-
-\dontrun{
-rmarkdown::draft("MyThesis.Rmd", template = "afit_prospectus", package = "AFIT")
-}
-
+Air Force Form SF 298
 }

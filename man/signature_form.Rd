@@ -2,7 +2,7 @@
 % Please edit documentation in R/forms.R
 \name{signature_form}
 \alias{signature_form}
-\title{Air Force Institute of Technology Prospectus Template}
+\title{Air Force Thesis Electronic Signature Form}
 \usage{
 signature_form(..., keep_tex = FALSE,
   md_extensions = c("-autolink_bare_uris"), template = "signatureForm.tex")
@@ -20,15 +20,5 @@ signature_form(..., keep_tex = FALSE,
 R Markdown output format to pass to \code{\link[rmarkdown:render]{render}}
 }
 \description{
-Format for creating the initial pages of AFIT theses, dissertations, and reports.
-}
-\details{
-Adapted from the STYLE GUIDE FOR AFIT DISSERTATIONS, THESES AND GRADUATE RESEARCH PAPERS - July 2015
-}
-\examples{
-
-\dontrun{
-rmarkdown::draft("MyThesis.Rmd", template = "afit_prospectus", package = "AFIT")
-}
-
+Air Force Thesis Electronic Signature Form
 }
