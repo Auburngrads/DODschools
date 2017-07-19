@@ -54,7 +54,7 @@ noTouch <- function(file = NULL) {
                            'env' = 'Michael R. Grimaila, PhD',
                            'enc' = 'Alan V. Lair, PhD',
                            'ens' = 'Joseph J. Pignatiello, PhD',
-                           'eng' = 'Nathaniel J. Davis IV, PhD',
+                           'eng' = 'Kenneth M. Hopkinson, PhD',
                            'eny' = 'Bradley S. Liebst, PhD',
                            'enp' = 'Nancy C. Giles, PhD')
   
