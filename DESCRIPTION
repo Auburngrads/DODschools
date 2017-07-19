@@ -1,7 +1,7 @@
 Package: DODschools
 Type: Package
 Title: Academic Document Templates for Department of Defense Schools
-Version: 1.0.0
+Version: 1.0.1
 Date: 2017-07-02
 Authors@R: c(
     person("Jason", "Freels" , , "auburngrads@live.edu"  , role = c("aut", "cre")),
