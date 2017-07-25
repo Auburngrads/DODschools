@@ -3,7 +3,6 @@
 #' @param template A named template folder
 #' @param file the name of the file to search for within the \code{template} folder
 #' @export
-
 find_file <- function(template, file) {
   template <- system.file("rmarkdown", "templates", template, file,
                           package = "DODschools")
