@@ -163,5 +163,4 @@ buildForms <- function(yml = 'metadata.yml', which = NULL,...) {
            FUN = function(x) rmarkdown::render(x, output_dir = outdir))
   
   }
-  
 }
