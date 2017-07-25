@@ -1,5 +1,6 @@
 #' Create a BibEntry from an international standard book number (ISBN)
 #' 
+#' 
 #' @importFrom knitcitations greycite
 #' @importFrom RCurl getURL
 #' @importFrom XML htmlTreeParse xpathSApply xmlValue
