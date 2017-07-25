@@ -3,7 +3,6 @@
 #' @param file A file containing a YAML metadata header
 #'
 #' @export
-
 getYAML <- function(file) {
   
   lines  <- readLines(file)[1:100]
