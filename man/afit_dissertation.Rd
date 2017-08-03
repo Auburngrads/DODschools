@@ -2,7 +2,7 @@
 % Please edit documentation in R/afit_dissertation.R
 \name{afit_dissertation}
 \alias{afit_dissertation}
-\title{Air Force Institute of Technology Prospectus Template}
+\title{Air Force Institute of Technology Dissertation Template}
 \usage{
 afit_dissertation(..., keep_tex = TRUE,
   md_extensions = c("-autolink_bare_uris"), fig_caption = TRUE,
