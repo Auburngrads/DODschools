@@ -1,5 +1,6 @@
-#' Create a BibEntry from an international standard book number (ISBN)
+#' Create a BibEntry from a DTIC document (Experimental)
 #' 
+#' @description Generate reference from document stored within the DTIC repository
 #' 
 #' @importFrom knitcitations greycite
 #' @importFrom RCurl getURL
@@ -9,12 +10,13 @@
 #' @param access_num The DTIC access number
 #' @param ... extra stuff
 #'
-#' @description This function uses advanced search on dtic.mil to generate a bibtex entry for books using the 
-#' ISBN.  The result is then formatted into a bibentry-class object using \code{knitcitations::greycite}and 
+#' @details This function references the advanced search utility on dtic.mil 
+#'          to generate a bibtex.  Results returned from the search are formatted 
+#'          as a bibentry-class object using \code{knitcitations::greycite}. 
+#'          
+#'          Note: the \code{designator} argument may contain dashes.
 #' @source http://www.dtic.mil/dtic/
-#' @details \code{isbn} may contain dashes
 #' @export
-
 citeDTIC <- function(designator = 'AFIT-ENS-DS-13-D-02', access_num = NULL,...) {
   
   url <- paste(c('http://dsearch.dtic.mil/search?client=dticol_frontend',
