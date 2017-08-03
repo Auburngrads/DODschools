@@ -2,7 +2,7 @@
 % Please edit documentation in R/noTouch.R
 \name{noTouch}
 \alias{noTouch}
-\title{Extract YAML metadata from metadata.yml}
+\title{Extract and parse YAML metadata}
 \usage{
 noTouch(file = NULL)
 }
@@ -10,5 +10,15 @@ noTouch(file = NULL)
 \item{file}{Path to the metadata.yaml file}
 }
 \description{
-Extract YAML metadata from metadata.yml
+Process metadata.yml content for use in a template
+}
+\details{
+This function is only intended to be called from 
+         within the YAML header of a Rmarkdown template provided 
+         by the DODschools package. When this function in invoked, 
+         the YAML metadata is read from \code{file}, processed and
+         then inserted in the appropriate field as needed by the template.
+         Calls to this function made within the YAML header of an Rmarkdown
+         document should not be touched (hence the name).  Changes to a
+         document's metadata should be made in the metadata.yml file.
 }
