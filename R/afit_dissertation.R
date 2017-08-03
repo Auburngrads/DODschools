@@ -1,4 +1,4 @@
-#' Air Force Institute of Technology Prospectus Template 
+#' Air Force Institute of Technology Dissertation Template 
 #'
 #' Format for creating the initial pages of AFIT theses, dissertations, and reports.
 #' 
