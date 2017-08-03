@@ -20,7 +20,7 @@
             \BG{0.98 0.92 0.73}
             \textColor{0 0 0}
             \textFont{helv}
-            \textSize{12}
+            \textSize{10}
             \Q{0}
             \W{0}
             } % 0.25 0.41 0.878
@@ -33,5 +33,690 @@
             \Q{1}
             \W{0}
             } % 0.25 0.41 0.878
-Hello and hi!
+\newdimen\rhI    \rhI=0.4in
+\newdimen\rhII   \rhII=0.4in
+\newdimen\rhIII  \rhIII=0.45in
+\newdimen\rhIV   \rhIV=.2in
+\newdimen\rhV    \rhV=0.3in
+\noindent\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|}
+    \hline
+%==================================================================
+%    Row 1 - Acknowledgement Statement        
+%==================================================================
+\parbox[][\rhI][c]{\textwidth}{
+\centering
+\small{I acknowledge receipt of and responsibility IAW AFI 23-111 for the items descrbed below and will return them by the date indicated.}
+}\\
+\hline
+%==================================================================
+%    Row 2 - Signature, Duty Phone, Issued By        
+%==================================================================
+\parbox[][\rhII][c]{0.6\textwidth}{
+\vspace{5pt}
+\small ISSUED TO: SIGNATURE
+\sigField[
+   \Lock{/Action/Exclude/Fields[(dutyph)(issuedby)(acctnum)]}]
+   {hrsig}{.41\textwidth}{.35in}\\[3pt]
+} \vrule\hspace{1pt}
+
+\parbox[][\rhII][c]{0.15\textwidth}{
+\small DUTY PHONE\\[3pt]
+\textField[\Q{1}\TU{Comm. Preferred}\V{937-555-5555}]{dutyph}{.14\textwidth}{0.2in}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhII][c]{0.25\textwidth}{
+\small ISSUED BY\\[3pt]
+\textField[\TU{ }\V{Maj. Jason Freels (x4676)}]{issuedby}{.25\textwidth}{0.2in}
+}\\
+\hline
+%==================================================================
+%    Row 3 - Signature, Duty Phone, Issued By        
+%==================================================================
+\parbox[][\rhIII][c]{0.6\textwidth}{
+\vspace{5pt}
+\small ISSUED TO: NAME, GRADE, ORIGIN (type or print)\\[3pt]
+\textField[\TU{ }\V{FirstName LastName, Lt Col, AFIT/ENV}]{issuedto}{.595\textwidth}{0.2in}\\
+} \vrule\hspace{1pt}
+
+\parbox[][\rhIII][c]{0.15\textwidth}{
+\small ORGN ACCT NO.\\[3pt]
+\textField[\Q{1}\TU{}\V{5755 (AFIT/ENV)}]{acctnum}{.14\textwidth}{0.2in}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhIII][c]{0.125\textwidth}{
+\small DATE OF ISSUE\\[3pt]
+\textField[
+  \Q{1}
+  \TU{Enter the date as mm/dd/yy or select a date from the calendar}
+  \V{ }
+  \AA{%
+    \AAKeystroke{AFDate_KeystrokeEx("mm/dd/yy")}
+    \AAFormat{AFDate_FormatEx("mm/dd/yy")}}]
+  {issuedate}{.115\textwidth}{0.2in}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhIII][c]{0.125\textwidth}{
+\small RETURN DATE\\[3pt]
+\textField[
+  \Q{1}
+  \TU{Enter the date as mm/dd/yy or select a date from the calendar}
+  \V{ }
+  \AA{%
+    \AAKeystroke{AFDate_KeystrokeEx("mm/dd/yy")}
+    \AAFormat{AFDate_FormatEx("mm/dd/yy")}}]
+  {returndate}{.115\textwidth}{0.2in}
+}\\
+\hline
+%==================================================================
+%    Row 4 - Column Headings        
+%==================================================================
+\parbox[][\rhIV][c]{0.27\textwidth}{
+\centering \small STOCK NUMBER
+} \vrule\hspace{1pt}
+
+\parbox[][\rhIV][c]{0.612\textwidth}{
+\centering \small DESCRIPTION OF ITEM
+}\vrule \hspace{1pt}
+
+\parbox[][\rhIV][c]{0.059\textwidth}{
+\centering \small U/I
+}\vrule \hspace{1pt}
+
+\parbox[][\rhIV][c]{0.059\textwidth}{
+\centering \small QNTY
+}\\
+\hline
+%==================================================================
+%    Item 1        
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum1}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe1}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui1}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity1}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 2 
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum2}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe2}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui2}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity2}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 3 
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum3}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe3}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui3}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity3}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 4
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum4}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe4}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui4}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity4}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 5
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum5}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe5}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui5}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity5}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 6
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum6}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe6}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui6}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity6}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 7
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum7}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe7}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui7}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity7}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 8
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum8}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe8}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui8}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity8}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 9
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum9}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe9}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui9}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity9}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 10
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum10}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe10}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui10}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity10}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 11
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum11}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe11}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui11}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity11}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 12
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum12}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe12}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui12}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity12}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 13
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum13}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe13}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui13}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity13}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 14
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum14}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe14}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui14}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity14}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 15
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum15}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe15}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui15}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity15}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 16
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum16}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe16}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui16}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity16}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 17
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum17}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe17}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui17}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity17}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 18
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum18}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe18}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui18}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity18}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 19
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum19}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe19}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui19}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity19}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 20
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum20}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe20}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui20}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity20}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 20
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum20}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe20}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui20}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity20}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 20
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum20}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe20}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui20}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity20}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 20
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum20}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe20}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui20}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity20}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 20
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum20}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe20}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui20}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity20}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 20
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum20}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe20}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui20}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity20}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 20
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum20}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe20}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui20}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity20}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 20
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum20}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe20}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui20}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity20}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 20
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum20}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe20}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui20}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity20}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 30
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum30}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe30}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui30}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity30}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 32
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum32}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe32}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui32}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity32}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+%==================================================================
+%    Item 32
+%==================================================================
+\parbox[][\rhV][c]{0.27\textwidth}{
+\textField[\V{}]{stocknum32}{.26\textwidth}{0.8\rhV}
+} \vrule\hspace{1pt}
+
+\parbox[][\rhV][c]{0.612\textwidth}{
+\textField[\V{}]{describe32}{.6\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{ui32}{.055\textwidth}{0.8\rhV}
+}\vrule \hspace{1pt}
+
+\parbox[][\rhV][c]{0.059\textwidth}{
+\textField[\V{}]{quantity32}{.055\textwidth}{0.8\rhV}
+}\\
+\hline
+\end{tabular}
+}\\[2pt]
+\textbf{AF IMT 1297.es, 20170619, V1} \hfill (PREVIOUS EDITION WILL BE USED) \hfill \textbf{TEMPORARY ISSUE RECEIPT}
 \end{document}
