@@ -1,10 +1,19 @@
-#' Extract YAML metadata from metadata.yml
+#' Extract and parse YAML metadata
 #'
+#' @description Process metadata.yml content for use in a template
+#' @details This function is only intended to be called from 
+#'          within the YAML header of a Rmarkdown template provided 
+#'          by the DODschools package. When this function in invoked, 
+#'          the YAML metadata is read from \code{file}, processed and
+#'          then inserted in the appropriate field as needed by the template.
+#'          Calls to this function made within the YAML header of an Rmarkdown
+#'          document should not be touched (hence the name).  Changes to a
+#'          document's metadata should be made in the metadata.yml file.
+#' 
 #' @param file Path to the metadata.yaml file
 #'
 #' @importFrom yaml yaml.load_file as.yaml
 #' @export
-#'
 noTouch <- function(file = NULL) {
   
   yaml <- yaml::yaml.load_file(file)
