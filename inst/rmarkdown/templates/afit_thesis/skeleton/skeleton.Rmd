@@ -81,7 +81,7 @@ library(xtable)
 source('scripts/R/setup.R')
 cite_options(citation_format = 'pandoc', 
              cite.style = "numeric")
-bib <- read.bibtex('bibtex/my_bib.bib')
+BIB <- ReadBib('bibtex/my_bib.bib')
 berger = citet('10.2307/2291285')
 knitc <- citet(citation('knitcitations'))
 ```
