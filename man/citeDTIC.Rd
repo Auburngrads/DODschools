@@ -2,7 +2,7 @@
 % Please edit documentation in R/citeDTIC.R
 \name{citeDTIC}
 \alias{citeDTIC}
-\title{Create a BibEntry from an international standard book number (ISBN)}
+\title{Create a BibEntry from a DTIC document (Experimental)}
 \source{
 http://www.dtic.mil/dtic/
 }
@@ -17,9 +17,12 @@ citeDTIC(designator = "AFIT-ENS-DS-13-D-02", access_num = NULL, ...)
 \item{...}{extra stuff}
 }
 \description{
-This function uses advanced search on dtic.mil to generate a bibtex entry for books using the 
-ISBN.  The result is then formatted into a bibentry-class object using \code{knitcitations::greycite}and
+Generate reference from document stored within the DTIC repository
 }
 \details{
-\code{isbn} may contain dashes
+This function references the advanced search utility on dtic.mil 
+         to generate a bibtex.  Results returned from the search are formatted 
+         as a bibentry-class object using \code{knitcitations::greycite}. 
+         
+         Note: the \code{designator} argument may contain dashes.
 }
