@@ -3,8 +3,6 @@
 #' @param file Path to the YAML file
 #'
 #' @importFrom yaml yaml.load_file
-#' 
-
 dontTouch <- function(file = NULL) {
   
   yaml <- yaml::yaml.load_file(file)
