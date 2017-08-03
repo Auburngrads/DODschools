@@ -9,7 +9,7 @@ add_reference(bib, file)
 \arguments{
 \item{bib}{One more \code{BibEntry}-class objects as defined by \code{RefManageR::is.BibEntry()}}
 
-\item{file}{Name (as a \code{character} string) of a .bib file containing \code{BibEntry}-class objects}
+\item{file}{The name of path (as a \code{character} string) of a .bib file containing \code{BibEntry}-class objects}
 }
 \description{
 Merge one or more BibEntries together without 
