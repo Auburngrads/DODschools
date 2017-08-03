@@ -6,9 +6,10 @@
 #' @details  stuff
 #' 
 #' @importFrom RefManageR as.BibEntry ReadBib WriteBib
+#' @importFrom tools file_ext
 #' 
 #' @param bib One more \code{BibEntry}-class objects as defined by \code{RefManageR::is.BibEntry()} 
-#' @param file Name (as a \code{character} string) of a .bib file containing \code{BibEntry}-class objects 
+#' @param file The name of path (as a \code{character} string) of a .bib file containing \code{BibEntry}-class objects 
 #'
 #' @examples 
 #' \dontrun{
@@ -28,6 +29,8 @@
 #' }
 #' @export
 add_reference <- function(bib, file) {
+  
+  if(tools::file_ext(file) != 'bib') stop('file is not a .bib file')
   
   Bib <- as.BibEntry(bib)
   
