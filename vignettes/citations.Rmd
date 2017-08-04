@@ -13,9 +13,16 @@ vignette: >
 shiny::includeCSS('vignette.css')
 ```
 
-# Overview
+# Introduction
 
-This vignette outlines various methods for generating and referencing citations within an Rmarkdown document.  Along with the Base-R functions that are available for this purpose, this vignette will also refer to functions from the R packages `RefManageR` and `knitcitations`. Both of these packages have been published to the CRAN and can be installed from within the R console using the code shown in the chunk below.
+At its most basic level, a reference citation (hereafter just called a citation) is a data file composed of a group of character strings describing details about a published work.  We often use citations in our writing to refer readers to someone else's work. However, before we can use a citation we need to have methods for
+
+1) Retrieving the raw data files
+2) Collecting the data files in a convenient location 
+3) Finding a desired citation within our collection 
+4) Inserting citations in a document using a specified format
+
+This vignette presents various methods for collecting formatting and inserting citations within an Rmarkdown document.  To accomplish this, we'll use several Base-R functions along with functions defined in the R packages `RefManageR` and `knitcitations`. Both of these packages have been published to the CRAN and can be installed within the R console using the code shown in the chunk below.
 
 ```{r, eval=FALSE}
 install.packages(c('RefManageR', 'knitcitations'))
@@ -28,7 +35,18 @@ library(RefManageR)
 library(knitcitations)
 ```
 
-Now that these packages have been installed and their functions loaded, the rest of this document walks through various use cases for citing references within your thesis or other rmarkdown document.
+Now that these packages have been installed and their functions loaded, the rest of this document walks through various use cases for collecting, formatting and inserting citations in your thesis or other rmarkdown documents.
+
+# Collecting Citations
+
+
+# Citing R and R packages
+
+A lot of work goes into making R available for you to use (for free). Therefore, if you use R for your research, you should cite it!  Likewise you should cite any R packages that you use.  The R Core Development team has made it each to generate a citation for R by simply using `citation()` 
+
+    
+
+# Formatting Citations 
 
 We'll want to take advantage of the options for each of these packages
 
@@ -46,9 +64,7 @@ cite_options()
 
 It's important to recognize that citations come in vaious formats and from many different locations.  The general idea is funnel all of your citations to Maybe you already have a file containing hundreds of citations in a bibTeX format have 
 
-# Citing R and R packages
 
-A lot of work goes into making R available for you to use (for free). Therefore, if you use R for your research, you should cite it!  Likewise you should cite any R packages that you use.  The R Core Development team has made it each to generate a citation for R by simply using `citation()` 
 # Week 3 - Inform the TPC of an Changes 
 
 - Students, advisors or Department POC will notify the TPC at <a href='mailto:thesis@afit.edu'>thesis@afit.edu</a> of the following:
