@@ -67,7 +67,7 @@ date:       "`r format(Sys.Date(), '%B %Y')`"
 sf298_date: "`r format(Sys.Date(), '%d-%m-%Y')`"
 dissertation: "`r DODschools::noTouch('metadata.yml')$dissertation`"
 output: 
-  AFIT::afit_thesis:
+  DODschools::afit_thesis:
     includes:
       in_header:    scripts/tex/in_header.tex
       before_body:  scripts/tex/before_body.tex
@@ -79,12 +79,11 @@ library(knitcitations)
 library(RefManageR)
 library(xtable)
 source('scripts/R/setup.R')
-BibOptions(citation_format = 'pandoc', 
-           bib.style = "numeric",
-           max.names = 3) # Max names before et al. is used
+
 BIB <- ReadBib('bibtex/my_bib.bib')
-berger = citet('10.2307/2291285')
-knitc <- citet(citation('knitcitations'))
+knitcitations <- BIB[title = 'knitcitations']
+refmanager    <- BIB[title = 'RefManageR']
+cite_options(citation_format = 'pandoc', cite.style = 'numeric')
 ```
 
 # Introduction
@@ -104,13 +103,15 @@ knitc <- citet(citation('knitcitations'))
 - symbols
 - equations
 - code chunks
-
+- `r Citep(knitcitations)`
+- `r citep(refmanager)`
+- `r citet(knitcitations)`
 
 ## What is Markdown and Why Should You Use it?
 
 [Markdown](http://daringfireball.net/projects/markdown/) is intended to be as easy-to-read and easy-to-write as is feasible. This means that  
 
-There are many advantages to building your thesis in Rmarkdown, this paper advantage of `r try(berger)`
+There are many advantages to building your thesis in Rmarkdown, this paper advantage of.
 
 For a quick cheatsheet on how to build an Rmarkdown, you can visit [https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf).
 
@@ -247,7 +248,11 @@ plot(rnorm(100), col = 2, pch = 16, las = 1)
 
 ## Citing published journal articles
 
-Published articles have a [Digital Object Identifier](http://www.doi.org/), or doi associated with them.  The `knitcitations` [`r try(knitc)`] package allows us to easily cite papers by simply providing the doi.  __Note: This requires an internet connection__ 
+Published articles have a [Digital Object Identifier](http://www.doi.org/), or doi associated with them.  The `knitcitations` [`r Cite(knitcitations, .opts = list(style='citation'))`] package allows us to easily cite papers by simply providing the doi.  __Note: This requires an internet connection__ 
+
+Published articles have a [Digital Object Identifier](http://www.doi.org/), or doi associated with them.  The `knitcitations` [`r Cite(knitcitations, .opts = list(style='textVersion'))`] package allows us to easily cite papers by simply providing the doi.  __Note: This requires an internet connection__
+
+Published articles have a [Digital Object Identifier](http://www.doi.org/), or doi associated with them.  The `knitcitations` [`r citep(knitcitations)`] package allows us to easily cite papers by simply providing the doi.  __Note: This requires an internet connection__
 
 ## Citing published books with an ISBN
 
@@ -263,6 +268,3 @@ The purpose of this is to show stuff to you. And I want to show you some really 
 
 # Conclusion
 
-```{r, results='asis', message=FALSE}
-write.bibtex(file = 'bibtex/final_bib.bib')
-```
