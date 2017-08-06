@@ -27,7 +27,7 @@ afit_thesis(..., keep_tex = FALSE, md_extensions = c("-autolink_bare_uris"),
 \item{format}{The format of the document}
 }
 \value{
-R Markdown output format to pass to \code{\link[rmarkdown:render]{render}}
+R Markdown output format to pass to \code{\link[rmarkdown::render]{render}}
 }
 \description{
 Create an AFIT thesis using rmarkdown
