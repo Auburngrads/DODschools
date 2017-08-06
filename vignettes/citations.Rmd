@@ -9,35 +9,72 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r}
+```{r, echo=F}
 shiny::includeCSS('vignette.css')
+library(DiagrammeR)
 ```
 
 # Introduction
 
-At its most basic level, a reference citation (hereafter just called a citation) is a data file composed of a group of character strings describing details about a published work.  We often use citations in our writing to refer readers to someone else's work. However, before we can use a citation we need to have methods for
+At its most basic level, a reference citation (hereafter just called a citation) is an object or data file containing a list of character strings. Each character string in a citation is a piece of metadata that describes some detail about a published work.  We often use citations in our writing to refer readers to someone else's work. However, before we can use a citation we need to have methods for
 
 1) Retrieving the raw data files
 2) Collecting the data files in a convenient location 
 3) Finding a desired citation within our collection 
 4) Inserting citations in a document using a specified format
 
-This vignette presents various methods for collecting formatting and inserting citations within an Rmarkdown document.  To accomplish this, we'll use several Base-R functions along with functions defined in the R packages `RefManageR` and `knitcitations`. Both of these packages have been published to the CRAN and can be installed within the R console using the code shown in the chunk below.
+If you've ever written a paper in which you've used citations, this discussion might seem trivial -- but that may be because you used a citation management service to handle some (or all) of these steps.  When in comes to managing citations in Rmarkdown documents, there's a lot of different procedures you can use to complete the above steps - each having their own advantages and disadvantages. (Yes, this is true for just about everything you do using R).
+
+This vignette presents a specific procedure for collecting, formatting and inserting citations within an Rmarkdown document.  Most of the heavy lifting in this procedure relies on functions defined in the `RefManageR` package along with a few functions from the `knitcitations` package.  Both of these packages have been published to the CRAN and can be installed within the R console using the code shown in the chunk below.
 
 ```{r, eval=FALSE}
 install.packages(c('RefManageR', 'knitcitations'))
 ```
 
-Once installed, you should load the functions from these packages into your current R workspace using
+Once these packages have been installed, you should load their functions into your current R workspace using
 
 ```{r}
 library(RefManageR)
 library(knitcitations)
 ```
 
-Now that these packages have been installed and their functions loaded, the rest of this document walks through various use cases for collecting, formatting and inserting citations in your thesis or other rmarkdown documents.
+Once these packages have been installed and their functions have been loaded you're ready to walk through the following examples showing how to collect, format, and insert citations in your thesis or other rmarkdown documents.
 
-# Collecting Citations
+The functions and methods provided by the `RefManageR` require each citation to be a `BibEntry`-class object.  Thus, the general procedure explained in this vignette is illustrated in the figure below.
+
+```{r, eval=!F, fig.align='center', echo=FALSE}
+ grViz("
+digraph a_nice_graph {
+
+# node definitions with substituted label text
+node [fontname = Helvetica, fixedsize=true, width=3.5, shape=rectangle, height=1]
+a [label = 'Retreive citations\nfrom various sources']
+k [label = 'Convert citations to\nBibEntry-class objects']
+l [label = 'Merge BibEntries with\nexisting collection']
+m [label = 'Remove duplicated BibEntries\nfrom updated collection']
+n [label = 'Write updated collection\nto .bib file']
+
+node [fontname = Helvetica, fixedsize=true, width=1.25, shape=circle, fontsize=10]
+b [label = 'Journal\nArticles\n(via DOI)']
+c [label = 'EndNote\nMendeley\nZotero\nGoogle Scholar']
+d [label = 'Books\n(via ISBN)']
+e [label = 'PubMed\nCrossRef\nDTIC\narXiv']
+h [label = 'R Packages']
+
+
+# edge definitions with the node IDs
+{b c d e h} -> a
+a -> k -> l -> m -> n
+}
+
+[1]: 'top'
+[2]: 10:20",
+width = '750px',
+height = '750px')
+#options = list(sizingPolicy = htmlwidgets::sizingPolicy(browser.fill = T)))
+```
+
+# Retreiving & Collecting Citations
 
 
 # Citing R and R packages
