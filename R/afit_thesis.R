@@ -12,7 +12,7 @@
 #' @param template The TeX template used
 #' @param format The format of the document
 #'
-#' @return R Markdown output format to pass to \code{\link[rmarkdown:render]{render}}
+#' @return R Markdown output format to pass to \code{\link[rmarkdown::render]{render}}
 #'
 #' @importFrom rmarkdown pdf_document
 #' @importFrom rmarkdown pandoc_highlight_args
