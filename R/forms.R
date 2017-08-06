@@ -124,17 +124,42 @@ rmarkdown::pdf_document(...,
 }
 
 
-#' Build one or more administrative forms
+#' Build One or More Administrative Forms
+#' 
+#' @description Automatically create and fill forms required for 
+#'              graduation using specified metadata
 #'   
 #' @param yml \code{character} Path to the metadata.yml file
-#' @param which A \code{numeric} designator for the form to be built. If \code{NULL} all forms are built. (see details) 
+#' @param which A \code{numeric} ID corresponding to the form to be built. If \code{NULL} (default), all forms are built. (see details) 
 #'
-#' @details The \code{which} argument accepts integer values from one (1) to five (5) 
+#' @details This function should only be used after a template directory has been created.
+#'          When invoked, this function reads the YAML metadata contained within 
+#'          the file provided as the argument \code{yml} and passes these variables 
+#'          to the LaTeX form template specified by \code{which}. 
+#'          
+#'          The \code{which} argument accepts integer values from one (1) to five (5),
+#'          where the values specify forms as
+#'          
+#'          \itemize{
+#'            \item{'1'}{'Standard Form 298 (SF298)'}
+#'            \item{'2'}{'Distribution Statement Form'}
+#'            \item{'3'}{'Public Affairs Approval Request Form'}
+#'            \item{'4'}{'Committee Signature Form'}
+#'            \item{'5'}{'AF Form 475 - Training Report'}
+#'          }
+#'
+#'          NOTE: All of the templates used to render these forms utilize the 
+#'          eforms LaTeX package.  As result each form can be edited after 
+#'          rendering and can also be electronically signed. 
+#'          
 #' @importFrom rmarkdown render
 #' 
 #' @export
-buildForms <- function(yml = 'metadata.yml', which = NULL,...) {
+build_forms <- function(yml = 'metadata.yml', which = NULL,...) {
 
+  if(tools::file_ext(yml) != 'yml') 
+    stop('Argument "yml" must be a YAML file (.yml)')
+  
   meta <- lapply(  X = readLines(yml), 
                  FUN = function(x) gsub('\"', "'", x))
   
@@ -149,7 +174,6 @@ buildForms <- function(yml = 'metadata.yml', which = NULL,...) {
   public <- system.file('rmd','forms','PAform.Rmd',           package = 'DODschools'),
   signit <- system.file('rmd','forms','signatureForm.Rmd',    package = 'DODschools'),
   report <- system.file('rmd','forms','trainingReport.Rmd',   package = 'DODschools'))
-  
   
   if(!is.null(which)) {
     
