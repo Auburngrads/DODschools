@@ -51,8 +51,11 @@ template_pandoc <- function(metadata, template, output, verbose = FALSE) {
   cat("---\n", file = tmp, append = TRUE)
   cat("\n", file = tmp, append = TRUE)
 
-  rmarkdown::pandoc_convert(tmp, "markdown", output = output,
-                            options = paste0("--template=", template), verbose = verbose)
+  rmarkdown::pandoc_convert(tmp, 
+                            "markdown", 
+                            output = output,
+                            options = paste0("--template=", template), 
+                            verbose = verbose)
 
   invisible(output)
 }
