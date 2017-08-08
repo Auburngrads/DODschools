@@ -4,6 +4,7 @@
 \usepackage{setspace}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2122}{!!!!I-AM-HERE!!!!!}
 \usepackage[pdftex]{graphicx}
 \DeclareGraphicsExtensions{.jpg, .pdf, .png}
 \usepackage{hyperref}
@@ -21,7 +22,7 @@
 \usepackage{flafter}
 \usepackage{amssymb,amsmath,amsfonts}
 \usepackage{theorem}
-\usepackage[square,numbers]{natbib}
+\usepackage[$if(cite_style)$$cite_style$$endif$,$if(cite_shape)$$cite_shape$$endif$]{natbib}
 \bibliographystyle{abbrvnat}
 \usepackage{varioref} 
 %\usepackage{tocbibind} 
@@ -410,7 +411,7 @@ $body$
 %==================================================================
 \addcontentsline{toc}{chapter}{\bfseries Bibliography}
 \singlespace
-\bibliography{bibtex/my_bib}
+\bibliography{references/my_bib}
 %==================================================================
 %    		Vita              
 %==================================================================
