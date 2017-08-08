@@ -14,7 +14,7 @@
 #'
 #' @return R Markdown output format to pass to \code{\link[rmarkdown::render]{render}}
 #'
-#' @importFrom rmarkdown pdf_document
+#' @importFrom bookdown pdf_document2
 #' @importFrom rmarkdown pandoc_highlight_args
 #' @importFrom rmarkdown includes
 #' @examples
@@ -41,13 +41,14 @@ afit_thesis <- function(...,
                         template,
                         package = "DODschools")
   
-  rmarkdown::pdf_document(...,
+  bookdown::pdf_document2(...,
                           template = thesis,
                           fig_caption = fig_caption,
                           keep_tex = keep_tex,
                           toc = toc,
                           pandoc_args = c('--listings'),
-                          citation_package = 'natbib')
+                          citation_package = 'natbib',
+                          highlight = 'kate')
                           #includes = rmarkdown::includes(in_header = list(thesis)))
   
 #  pre_processor <- function(metadata, input_file, runtime, knit_meta, files_dir,
