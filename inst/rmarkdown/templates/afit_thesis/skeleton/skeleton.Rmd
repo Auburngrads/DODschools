@@ -66,6 +66,8 @@ graddate:   "`r DODschools::noTouch('metadata.yml')$grad_date`"
 date:       "`r format(Sys.Date(), '%B %Y')`"
 sf298_date: "`r format(Sys.Date(), '%d-%m-%Y')`"
 dissertation: "`r DODschools::noTouch('metadata.yml')$dissertation`"
+cite_style: "`r DODschools::noTouch('metadata.yml')$cite_style`"
+cite_shape: "`r DODschools::noTouch('metadata.yml')$cite_shape`"
 output: 
   DODschools::afit_thesis:
     includes:
@@ -80,20 +82,29 @@ library(RefManageR)
 library(xtable)
 source('scripts/R/setup.R')
 
-BIB <- ReadBib('bibtex/my_bib.bib')
+BIB <- ReadBib('references/my_bib.bib')
 knitcitations <- BIB[title = 'knitcitations']
 refmanager    <- BIB[title = 'RefManageR']
-cite_options(citation_format = 'pandoc', cite.style = 'numeric')
+pressure      <- BIB[key = 'randolph2016']
+cite_options(citation_format = 'pandoc')
 ```
 
 # Introduction
 
-## Welcome to Markdown!
+## Welcome to the AFIT Markdown thesis template!
 
-\MakeUppercase{fIrSt ThInGs FiRsT} - \underline{this IS your thesis}.  As you start writing your document, you will replace this example content with your own.  This document is meant to serve as a shell for your thesis and a primer on how to use Markdown.  Throughout this document, you will find several references and/or resources showing how to include
+\MakeUppercase{fIrSt ThInGs FiRsT} - \underline{this IS your thesis}.  As you start writing your document, you will replace this example content with your own.  This document is meant to serve as a primer on how to use the AFIT Markdown thesis template provided by the DODschools package. 
 
-- text
-- citations & bibliographies
+## What is Markdown and Why Should You Use it?
+
+[Markdown](http://daringfireball.net/projects/markdown/) is intended to be as easy-to-read and easy-to-write as is feasible. Unlike \LaTeX, there is no single markdown standard rather there are many distinct 'flavors'.  This template uses Rmarkdown which is based on 'Pandoc-flavored' markdown. 
+
+For a quick cheatsheet on how to use Rmarkdown, visit [__this site__](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf).  For more detailed instructions on using rmarkdown to create pdf documents visit [__this site__](http://rmarkdown.rstudio.com/pdf_document_format.html).
+
+Throughout this document, you will find several references and/or resources showing how to include
+
+- ___text___
+- citations & *bibliographies*
 - plots
 - images
 - tables
@@ -103,37 +114,35 @@ cite_options(citation_format = 'pandoc', cite.style = 'numeric')
 - symbols
 - equations
 - code chunks
-- `r Citep(knitcitations)`
-- `r citep(refmanager)`
-- `r citet(knitcitations)`
 
-## What is Markdown and Why Should You Use it?
+## This is a 2^nd^ level heading
 
-[Markdown](http://daringfireball.net/projects/markdown/) is intended to be as easy-to-read and easy-to-write as is feasible. This means that  
-
-There are many advantages to building your thesis in Rmarkdown, this paper advantage of.
-
-For a quick cheatsheet on how to build an Rmarkdown, you can visit [https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf).
 
 ## Tables
 
-It's really easy to go from a `matrix` or a `data.frame` to a \LaTeX-style table in under 5 seconds. For information on how to build a table in R, you can visit [http://www.cyclismo.org/tutorial/R/tables.html](http://www.cyclismo.org/tutorial/R/tables.html). The following resource will get you started on how to get your table in R ready for publication [https://www.r-bloggers.com/making-publication-ready-tables-with-xtable](https://www.r-bloggers.com/making-publication-ready-tables-with-xtable).
+There are a number of R packages that make it really easy to turn a matrix or a data.frame into a \LaTeX-style table.  Examples of such packages are
+
+- The kable function in the knitr package can create simple tables
+- The pandoc.table function in the pander package can create more complex table, but can be difficult to work with for some situations.
+- The Hmisc package is a do-everything package that contains several functions for creating tables.
+- The stargazer and tables packages provide functions for creating tables of regression results and summary statistics.
+- The xtable package is widely considered as the go-to package for creating \LaTeX style tables.
 
 ## Plots
 
-Plots are a useful way to display data. Building plots in R is quick and easy. The following is an example using the data set **mtcars**.
+Building plots in R is easy using either the graphics, ggplot2 or lattice packages. The following is an example using the data set **mtcars**.
 
 ```{r, echo=FALSE}
 plot(mtcars$mpg,mtcars$hp,
-     main="Scatterplot",
-     xlab="Miles per Gallon", 
-     ylab="Horse Power", 
-     col="blue")
+     main = "Scatterplot",
+     xlab = "Miles per Gallon", 
+     ylab = "Horse Power", 
+     col  = "blue")
 ```
 
 For a detailed and in depth desriptions on how to make plots, and the different kinds that R is capable of creating, you can visit <http://www.statmethods.net/graphs/scatterplot.html>.
 
-The ggplot2 package has the ability to offer many more plotting options than the **plot()** command. You can learn more about ggplot2 by going to <http://docs.ggplot2.org/current/ggplot.html>. Creating a plot with ggplot2 will allow you to add layers of data to a single plot, which can be helpful in certain situations.
+The ggplot2 package has the ability to offer many more plotting options than the **plot()** command. You can learn more about ggplot2 by going to <http://docs.ggplot2.org/current/ggplot.html>. Creating a plot with ggplot2 will allow you to create publication quality plots with just a few lines of code by adding layers.
 
 ## Text
 
@@ -188,51 +197,19 @@ Code chunks have many options. You might choose to display a code chunk, like ab
 2+2
 ```
 
-For a complete list of code chunk option, you can visit <http://rmarkdown.rstudio.com/authoring_rcodechunks.html>.
+For a complete list of code chunk options, visit this page <http://rmarkdown.rstudio.com/authoring_rcodechunks.html>.
 
 ## Headings
 
 The purpose of this is to show stuff to you. And I want to show you some really cool stuff.
 
-## Quotes
-
-The purpose of this is to show stuff to you. And I want to show you some really cool stuff.
-
-## Bibliography
-
-The purpose of this is to show stuff to you. And I want to show you some really cool stuff.
-
-## Symbols
-
-The purpose of this is to show stuff to you. And I want to show you some really cool stuff.
-
 ## Images
 
-The purpose of this is to show stuff to you. And I want to show you some really cool stuff.
+Markdown provides a means to include images such as images about AFIT
 
-## Acronyms
-
-The purpose of this is to show stuff to you. And I want to show you some really cool stuff.
-
-## Glossary
-
-The purpose of this is to show stuff to you. And I want to show you some really cool stuff.
-
-This template demonstrates some of the basic latex you'll need to know to create a JSS article.
-
-## Code formatting
-
-Don't use markdown, instead use the more precise latex commands:
-
-* \proglang{Java}
-* \pkg{plyr}
-* \code{print("abc")}
-
-### R code
+## Quotes
 
 > This is a quote in markdown
-
-Paragraph.
 
 \begin{quote}
 This is a quote in \LaTeX
@@ -246,25 +223,28 @@ plot(rnorm(100), col = 2, pch = 16, las = 1)
 
 # Literature Review
 
+This is the second chapter of your thesis.
+
 ## Citing published journal articles
 
-Published articles have a [Digital Object Identifier](http://www.doi.org/), or doi associated with them.  The `knitcitations` [`r Cite(knitcitations, .opts = list(style='citation'))`] package allows us to easily cite papers by simply providing the doi.  __Note: This requires an internet connection__ 
+The RefManageR and knitcitations packages provide functions to create citations from various sources.  __Note: Some of these functions require an internet connection__
 
-Published articles have a [Digital Object Identifier](http://www.doi.org/), or doi associated with them.  The `knitcitations` [`r Cite(knitcitations, .opts = list(style='textVersion'))`] package allows us to easily cite papers by simply providing the doi.  __Note: This requires an internet connection__
-
-Published articles have a [Digital Object Identifier](http://www.doi.org/), or doi associated with them.  The `knitcitations` [`r citep(knitcitations)`] package allows us to easily cite papers by simply providing the doi.  __Note: This requires an internet connection__
+- Digital Object Identifiers for published articles
+- International Standard Book Numbers for published books
+- Or doi associated with them.  The knitcitations [`r citet(knitcitations)`] package allows us to easily cite papers by simply providing the doi.   
 
 ## Citing published books with an ISBN
 
-ISBN
+`r citet(pressure)` states that pressure cookers are great! 
 
 # Methodology
 
-The purpose of this is to show stuff to you. And I want to show you some really cool stuff.
+This is the third chapter of your thesis.
 
 # Analysis And Results
 
-The purpose of this is to show stuff to you. And I want to show you some really cool stuff.
+This is the fourth chapter of your thesis
 
 # Conclusion
 
+This is the final chapter of your thesis.
