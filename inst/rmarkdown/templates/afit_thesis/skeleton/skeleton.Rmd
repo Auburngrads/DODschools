@@ -115,10 +115,53 @@ Throughout this document, you will find several references and/or resources show
 - equations
 - code chunks
 
-## This is a 2^nd^ level heading
+## Basic set-up (This is a 2^nd^ level heading - sections)
 
+
+Before trying to knit the document we need to ensure that you have all of the necessary tools installed. 
+
+### Installing Tex/LaTeX (This is a 3^rd^ level heading - subsections)
+
+The first required tool is a `TeX` distribution.  
+
+- For Windows, install [__MiKTeX__](https://miktex.org/howto/install-miktex)
+- For Mac, install [__MacTeX__](https://www.tug.org/mactex/)
+- For Linux, isntall [__TeX Live__](https://tug.org/texlive/)
+
+### Installing Perl
+
+The next required tool is Perl - particularly if your running Windows.  You may already have Perl installed, in which case reinstalling is not necessary. To check if Perl has already been installed, run the following code in the R console. 
+
+```{r, eval=FALSE}
+Sys.which('perl')
+```
+
+If this code returns a path to perl.exe (i.e. `"C:\\STRAWB~1\\perl\\bin\\perl.exe"`) - your good to go. If this returns nothing (i.e. `""`) it is likely that Perl is not installed.  Before installing however let's check your `C:/` drive (or wherever your applications are stored).  Look for a directory named `Perl`, `ActivePerl`, or `Strawberry`.  If you see one of these perl is installed but not correctly configured (we'll get to that).  If you don't see any of these directories go [__here__](http://strawberryperl.com/) to install Strawberry Perl for Windows or [__here__](https://www.activestate.com/activeperl) to install ActiveState Perl for Mac or Linux.
+
+### Installing Pandoc
+
+Finally, we need to install Pandoc.  Once again check to see if Pandoc has already been installed by running the following code in the R console.
+
+```{r, eval=FALSE}
+Sys.which('pandoc')
+```
+
+If this returns a path to pandoc.exe - you're good.  If not, go [__here__](http://www.pandoc.org/installing.html) to install Pandoc for your OS.
+
+## Let's test it out
+
+OK, so now let's try to knit this document.  You may get one or more errors stating that a required \LaTeX package is not installed. To fix this, just open your package manager and install the package(s) listed.  __NOTE: You may need to use the admin version of the package manager (I've found this to be true for MiKTeX on Windows).__  To see which latex packages are called by this template run the code below to open the template file.
+
+```{r, eval=FALSE, echo=TRUE}
+library(DODschools)
+browseURL(.afit_thesis_template) 
+```
+
+If you get an error referencing an application called `latexmk.exe`, read the error message and follow the path to find `latexmk.exe` and delete it.  Try knitting the document again. 
 
 ## Tables
+
+Assuming you were able to get the document to knit
 
 There are a number of R packages that make it really easy to turn a matrix or a data.frame into a \LaTeX-style table.  Examples of such packages are
 
@@ -130,9 +173,9 @@ There are a number of R packages that make it really easy to turn a matrix or a 
 
 ## Plots
 
-Building plots in R is easy using either the graphics, ggplot2 or lattice packages. The following is an example using the data set **mtcars**.
+Building plots in R is easy using either the graphics, ggplot2 or lattice packages. Figure \@ref(fig:basic) is an example using the data set **mtcars**. Notice that we used `\@ref(fig:basic)` to reference the plot in the text, where `fig` to denotes that we are referencing a figure and `basic` refers to the name of the chunk in which the plot was created.  NOTE: to reference a plot you must include a caption using the `fig.cap` chunk argument.   
 
-```{r, echo=FALSE}
+```{r basic, echo=FALSE, fig.cap='A basic plot'}
 plot(mtcars$mpg,mtcars$hp,
      main = "Scatterplot",
      xlab = "Miles per Gallon", 
@@ -150,9 +193,21 @@ The purpose of this is to show stuff to you. And I want to show you some really 
 
 ## Equations
 
-In-line equations are included within a line of text like this $y=mx^2+b$
+In-line equations are those that are included within a line of text like this $y=mx^2+b$
 
-Display Equations stand out from the rest of the text:
+```{r}
+n = 5
+k = 2
+```
+
+Display equations are intended to stand out from the rest of the text, in this template display equations come in two forms: referenced and non-referenced.  If you want to reference an equation in the text such as Equation \@ref(eq:binom) below, use the `\begin{equation}` environment as shown below.
+
+\begin{equation} 
+  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
+  (\#eq:binom)
+\end{equation} 
+
+If you do not want to reference an equation you can surround encase the equation with `$$` to define the begin and end of math-mode. 
 
 ```{r, fig.cap='A simple regression model plot'}
 N <- 30
@@ -166,7 +221,6 @@ plot(x = sort(X),
      las = 1)
 ```
 
-text, text, text
 
 ```{r, results='asis'}
 model  <- lm(Y~X)
