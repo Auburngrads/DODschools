@@ -68,7 +68,7 @@ distribution_reason:  # WHY NOT DISTRIBUTION A?
   crt: no       # Critical Technology
   pre: no       # Premature Dissemination
   aou: no       # Administrative Operational Use
-  tne: yes      # Test And Evaluation
+  tne: no       # Test And Evaluation
   aut: no       # Specific Authority
   exp: yes      # Export Controlled
   vul: no       # Vulnerability Information
@@ -94,4 +94,5 @@ sponsor:
   email: 'first.last@afit.edu'
   acronym: 'AFIT'
   report_number: ''
+numeric_citations: yes
 
