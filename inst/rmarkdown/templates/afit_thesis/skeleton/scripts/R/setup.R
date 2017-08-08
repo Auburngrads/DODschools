@@ -1,7 +1,3 @@
-if(!'knitr'%in%library()$results)         install.packages('knitr', repos = 'http://cran.rstudio.com')
-if(!'stringr'%in%library()$results)       install.packages('stringr', repos = 'http://cran.rstudio.com')
-if(!'devtools'%in%library()$results)      install.packages('devtools', repos = 'http://cran.rstudio.com')
-
 knitr::knit_hooks$set(
   
   jkf_par = function(before, options, envir) {
@@ -17,7 +13,8 @@ knitr::knit_hooks$set(
         font.axis = 2, 
         tck = 0.015, 
         family = "serif",
-        lwd = 2)  }
+        lwd = 2,
+        las = 1)  }
 })
 
 knitr::knit_hooks$set(
@@ -51,30 +48,16 @@ knitr::knit_hooks$set(
 knitr::opts_chunk$set(message = FALSE, 
                       warning = FALSE, 
                       echo = FALSE, 
-                      results = "asis", 
                       jkf_par = TRUE,
                       fig.align = 'center',
                       fig.pos = 'h',
-                      fig.width = 6.25,
-                      fig.height = 4.5,
-                      comment = NA)
+                      fig.width = 6,
+                      fig.height = 4,
+                      comment = NA,
+                      fig.path = 'figures/',
+                      cache.path = 'cache/',
+                      cache = TRUE)
 
-getYAML <- function(file) {
-  
-  lines  <- readLines(file)
-  header <- list(lines[min(which(lines%in%'---'))+1:max(which(lines%in%'---'))-1])
-  header <- unlist(header)
-  header <- header[-c(1,length(header))]
-  output <- header[which(header%in%'output:')+1]
-  output <- gsub(" ", "", unlist(strsplit(output, ':'))[1])
-  output <- gsub('_document', '', output)
-  
-  yaml <- list()
-  
-  yaml$output <- output
-
-  invisible(yaml)  
-}
 
 getPackage <- function(pkg = NULL, repo = 'CRAN') {
   
