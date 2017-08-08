@@ -135,10 +135,9 @@ noTouch <- function(file = NULL) {
   yaml$distribution_statement$E <- checkIT(yaml$distribution_statement$E)
   yaml$distribution_statement$F <- checkIT(yaml$distribution_statement$F)
 
-  if(tolower(yaml$document$type)%in%c('dissertation','prospectus')) {
-    yaml$dissertation <- TRUE
-    
-  } else { FALSE }
+  `if`(tolower(yaml$document$type)%in%c('dissertation','prospectus'),
+       yaml$dissertation <- TRUE,
+       yaml$dissertation <- FALSE)
   
   # yaml$dissertation <- 'no'
   # yaml$dissertation <-  'yes'
@@ -156,5 +155,8 @@ noTouch <- function(file = NULL) {
     
   #yaml <- unlist(lapply(yaml, FUN = function(x) {gsub('\"', '', x)}))
 
+  yaml$cite_style <- `if`(yaml$numeric_citations, 'numbers', 'authoryear')
+  yaml$cite_shape <- `if`(yaml$numeric_citations, 'square' , 'round')
+  
   return(yaml)
 }
