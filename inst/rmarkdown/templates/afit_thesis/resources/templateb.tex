@@ -1,5 +1,4 @@
 \documentclass[12pt,letterpaper,toc=flat,oneside]{report}
-\def\code{}
 \usepackage[top=1in,bottom=1.25in,hmargin=1.25in]{geometry}
 \usepackage{setspace}
 \usepackage[T1]{fontenc}
@@ -16,12 +15,12 @@
 \usepackage{ifthen}
 \usepackage[scaled=.8]{helvet}
 \newenvironment{myfont}{\fontfamily{phv}\selectfont}{\par}
-\usepackage[font={bf,footnotesize},labelsep=period]{caption}
+\usepackage[font={bf,normal},labelsep=period,labelfont=bf]{caption}
 \usepackage{indentfirst}
 \usepackage{float}
 \usepackage{flafter}
 \usepackage{amssymb,amsmath,amsfonts}
-\usepackage{theorem}
+%\usepackage{theorem}  % uncomment if using rmarkdown::pdf_document
 \usepackage[$if(cite_style)$$cite_style$$endif$,$if(cite_shape)$$cite_shape$$endif$]{natbib}
 \bibliographystyle{abbrvnat}
 \usepackage{varioref} 
@@ -39,28 +38,43 @@
 \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \let\proglang=\textsf
 \newcommand{\pkg}[1]{{\fontseries{b}\selectfont #1}}
-\def\code{}
 \usepackage{color}
 \definecolor{myblue}{rgb}{0,0,0.6}
-\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mygray}{rgb}{0.75,0.75,0.75}
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
-$if(listings)$
+\definecolor{Green}{rgb}{0.0,0.5,0.0}
+\def\code{}
 \usepackage{listings}
 \lstset{ %
-  backgroundcolor=\color{mygray},  % choose the background color
-  basicstyle=\bf\normalsize,        % size of fonts used for the code
-  breaklines=true,                 % automatic line breaking only at whitespace
+language=R,
+fancyvrb=true,
+basicstyle=\normalsize,
+numbers=left,
+numberstyle=\normalsize,
+ stringstyle=\fontfamily{phv}\bfseries,  % size of fonts used for the code
+%  backgroundcolor=\color{mygray},  % choose the background color
+%  fillcolor=\color{mygray},
+  rulesepcolor=\color{blue},
+  breaklines=false,                 % automatic line breaking only at whitespace
   captionpos=b,                   % sets the caption-position to bottom
   commentstyle=\color{myblue},    % comment style
   escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
-  lineskip=-.5pt,
+  lineskip=7pt,
   keywordstyle=\color{Green},       % keyword style
   stringstyle=\color{mymauve},     % string literal style
-  aboveskip=\medskipamount,
-  belowskip=\medskipamount,
-  frame=single,
-  frameround=tttt,
-}
+  aboveskip=5pt,
+  belowskip=5pt,
+  frame=shadowbox,
+  framesep=5pt,
+  framexleftmargin=5mm,
+  rulesep=5pt,
+  framerule=1pt,
+  showstringspaces=false,
+  float=h,
+  columns=fullflexible,
+  rulecolor=\color{black}}
+$if(highlighting-macros)$
+$highlighting-macros$
 $endif$
 \def\afittocfootskip{0.41in}      %if above margins change, routines 
                                   %using this command may require 
@@ -80,8 +94,8 @@ $endif$
 \renewcommand\thesubsubsection {\thesubsection.\arabic{subsubsection}}
 \renewcommand\theparagraph     {\thesubsubsection.\arabic{paragraph}}
 \renewcommand\thesubparagraph  {\theparagraph.\arabic{subparagraph}}
-\renewcommand\thefigure        {\arabic{chapter}.\arabic{figure}} 
-\renewcommand\thetable         {\arabic{chapter}.\arabic{table}}
+\renewcommand\thefigure        {\arabic{figure}} 
+\renewcommand\thetable         {\arabic{table}}
 %==================================================================
 %    		Customizing Chapter Titles               
 %==================================================================
@@ -328,6 +342,20 @@ United States
 	\setcounter{page}{4}
 	\renewcommand{\thepage}{\roman{page}}
 %==================================================================
+%    		ABSTRACT Environment              
+%==================================================================
+    \thispagestyle{plain}
+    \addtocontents{toc}{~\hfill\textbf{Page}\par}
+    \addcontentsline{toc}{chapter}{\bfseries Abstract}
+    \noindent $if(designator)$$designator$$else$DESIGNATOR NOT SPECIFIED$endif$
+    \begin{center}
+	\Large\bfseries Abstract
+    \end{center}
+    \vspace{2em}
+    $if(abstract)$$abstract$$else$ABSTRACT NOT SPECIFIED
+    $endif$
+    \newpage
+%==================================================================
 %    		Dedication Environment              
 %==================================================================
 $if(dedication)$
@@ -361,18 +389,6 @@ $if(preface)$
 \addcontentsline{toc}{chapter}{Preface}
 }{$preface$}
 $endif$
-%==================================================================
-%    		ABSTRACT Environment              
-%==================================================================
-    \thispagestyle{plain}
-    \addtocontents{toc}{~\hfill\textbf{Page}\par}
-    \addcontentsline{toc}{chapter}{\bfseries Abstract}
-    \noindent $designator$
-    \begin{center}
-	\Large\bfseries Abstract
-    \end{center}
-    \vspace{2em}
-    $abstract$
 %==================================================================
 %    		Table of Contents              
 %==================================================================
