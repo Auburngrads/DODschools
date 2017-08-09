@@ -33,7 +33,8 @@ Imports: utils,
          shiny,
          xtable,
          devtools,
-         stringr
+         stringr,
+         bookdown
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
 NeedsCompilation: no
