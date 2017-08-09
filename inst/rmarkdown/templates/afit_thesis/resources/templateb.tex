@@ -6,9 +6,11 @@
 \DeclareUnicodeCharacter{2122}{!!!!I-AM-HERE!!!!!}
 \usepackage[pdftex]{graphicx}
 \DeclareGraphicsExtensions{.jpg, .pdf, .png}
-\usepackage{hyperref}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage[colorlinks=false]{hyperref}
 \hypersetup{%
-    pdfborder = {0 0 0}
+    urlbordercolor = .
 }
 \usepackage{scripts/tex/eforms}
 \usepackage{bigstrut, multirow}
@@ -38,20 +40,18 @@
 \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \let\proglang=\textsf
 \newcommand{\pkg}[1]{{\fontseries{b}\selectfont #1}}
-\usepackage{color}
 \definecolor{myblue}{rgb}{0,0,0.6}
 \definecolor{mygray}{rgb}{0.75,0.75,0.75}
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
 \definecolor{Green}{rgb}{0.0,0.5,0.0}
 \def\code{}
+\usepackage{courier}
 \usepackage{listings}
 \lstset{ %
-language=R,
-fancyvrb=true,
-basicstyle=\normalsize,
+basicstyle=\ttfamily\normalsize\bfseries,
 numbers=left,
 numberstyle=\normalsize,
- stringstyle=\fontfamily{phv}\bfseries,  % size of fonts used for the code
+ stringstyle=\normalsize,  % size of fonts used for the code
 %  backgroundcolor=\color{mygray},  % choose the background color
 %  fillcolor=\color{mygray},
   rulesepcolor=\color{blue},
@@ -59,11 +59,11 @@ numberstyle=\normalsize,
   captionpos=b,                   % sets the caption-position to bottom
   commentstyle=\color{myblue},    % comment style
   escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
-  lineskip=7pt,
+  lineskip=10pt,
   keywordstyle=\color{Green},       % keyword style
   stringstyle=\color{mymauve},     % string literal style
-  aboveskip=5pt,
-  belowskip=5pt,
+  aboveskip=7pt,
+  belowskip=7pt,
   frame=shadowbox,
   framesep=5pt,
   framexleftmargin=5mm,
@@ -71,8 +71,8 @@ numberstyle=\normalsize,
   framerule=1pt,
   showstringspaces=false,
   float=h,
-  columns=fullflexible,
-  rulecolor=\color{black}}
+  rulecolor=\color{black}
+}%
 $if(highlighting-macros)$
 $highlighting-macros$
 $endif$
@@ -96,6 +96,7 @@ $endif$
 \renewcommand\thesubparagraph  {\theparagraph.\arabic{subparagraph}}
 \renewcommand\thefigure        {\arabic{figure}} 
 \renewcommand\thetable         {\arabic{table}}
+\renewcommand\theequation      {\arabic{equation}}
 %==================================================================
 %    		Customizing Chapter Titles               
 %==================================================================
