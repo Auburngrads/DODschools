@@ -56,7 +56,7 @@ knitr::opts_chunk$set(message = FALSE,
                       comment = NA,
                       fig.path = 'figures/',
                       cache.path = 'cache/',
-                      cache = TRUE)
+                      cache = F)
 
 
 getPackage <- function(pkg = NULL, repo = 'CRAN') {
