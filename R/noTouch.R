@@ -24,6 +24,7 @@ noTouch <- function(file = NULL) {
                                 collapse = ' ')
   
   yaml$author$fullname <- paste(c(yaml$author$firstname,
+                                  try(yaml$author$middle),
                                   yaml$author$lastname),
                                 collapse = ' ')
   
