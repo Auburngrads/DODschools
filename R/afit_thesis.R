@@ -27,7 +27,7 @@
 #' 
 #' @export
 afit_thesis <- function(...,
-                        keep_tex = FALSE,
+                        keep_tex = !FALSE,
                         md_extensions = c("-autolink_bare_uris"),
                         fig_caption = TRUE,
                         toc = TRUE,

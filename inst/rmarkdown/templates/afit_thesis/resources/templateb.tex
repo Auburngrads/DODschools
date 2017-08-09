@@ -8,9 +8,15 @@
 \DeclareGraphicsExtensions{.jpg, .pdf, .png}
 \usepackage{color}
 \usepackage{xcolor}
-\usepackage[colorlinks=false]{hyperref}
+\usepackage[linktocpage=true]{hyperref}
 \hypersetup{%
-    urlbordercolor = .
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black},
+    filecolor={blue!80!black},
+    urlbordercolor={blue!80!black},
+    pdfborderstyle={/S/U/W 1}
 }
 \usepackage{scripts/tex/eforms}
 \usepackage{bigstrut, multirow}
@@ -43,25 +49,25 @@
 \definecolor{myblue}{rgb}{0,0,0.6}
 \definecolor{mygray}{rgb}{0.75,0.75,0.75}
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
-\definecolor{Green}{rgb}{0.0,0.5,0.0}
-\def\code{}
+\definecolor{Green}{rgb}{0.0,0.42,0.24}
+\def\code{\bfseries}
 \usepackage{courier}
 \usepackage{listings}
 \lstset{ %
-basicstyle=\ttfamily\normalsize\bfseries,
+language=R,
+basicstyle=\ttfamily\normalsize\color{black},
 numbers=left,
-numberstyle=\normalsize,
- stringstyle=\normalsize,  % size of fonts used for the code
+numberstyle=\normalsize\color{black},
 %  backgroundcolor=\color{mygray},  % choose the background color
 %  fillcolor=\color{mygray},
   rulesepcolor=\color{blue},
-  breaklines=false,                 % automatic line breaking only at whitespace
-  captionpos=b,                   % sets the caption-position to bottom
-  commentstyle=\color{myblue},    % comment style
-  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  breaklines=false,   % automatic line breaking only at whitespace
+  captionpos=b,       % sets the caption-position to bottom
+  commentstyle=\color{Green}\bfseries,    % comment style
+  escapeinside={\%*}{*)},   % if you LaTeX within your code
   lineskip=10pt,
-  keywordstyle=\color{Green},       % keyword style
-  stringstyle=\color{mymauve},     % string literal style
+  keywordstyle=\color{red}\bfseries,       % keyword style
+  stringstyle=\color{black},     % string literal style
   aboveskip=7pt,
   belowskip=7pt,
   frame=shadowbox,
@@ -71,7 +77,9 @@ numberstyle=\normalsize,
   framerule=1pt,
   showstringspaces=false,
   float=h,
-  rulecolor=\color{black}
+  rulecolor=\color{black},
+  emph={_},
+  emphstyle=\color{black}
 }%
 $if(highlighting-macros)$
 $highlighting-macros$

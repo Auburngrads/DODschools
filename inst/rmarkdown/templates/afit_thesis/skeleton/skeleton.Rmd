@@ -99,7 +99,7 @@ cite_options(citation_format = 'pandoc')
 
 [Markdown](http://daringfireball.net/projects/markdown/) is intended to be as easy-to-read and easy-to-write as is feasible. Unlike \LaTeX, there is no single markdown standard rather there are many distinct 'flavors'.  This template uses Rmarkdown which is based on 'Pandoc-flavored' markdown. 
 
-For a quick cheatsheet on how to use Rmarkdown, visit [__this site__](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf).  For more detailed instructions on using rmarkdown to create pdf documents visit [__this site__](http://rmarkdown.rstudio.com/pdf_document_format.html).
+For a quick cheatsheet on how to use Rmarkdown, visit [this site](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf).  For more detailed instructions on using rmarkdown to create pdf documents visit [this site](http://rmarkdown.rstudio.com/pdf_document_format.html).
 
 Throughout this document, you will find several references and/or resources showing how to include
 
@@ -124,9 +124,9 @@ Before trying to knit the document we need to ensure that you have all of the ne
 
 The first required tool is a `TeX` distribution.  
 
-- For Windows, install [__MiKTeX__](https://miktex.org/howto/install-miktex)
-- For Mac, install [__MacTeX__](https://www.tug.org/mactex/)
-- For Linux, isntall [__TeX Live__](https://tug.org/texlive/)
+- For Windows, install [MiKTeX](https://miktex.org/howto/install-miktex)
+- For Mac, install [MacTeX](https://www.tug.org/mactex/)
+- For Linux, isntall [TeX Live](https://tug.org/texlive/)
 
 ### Installing Perl
 
@@ -136,7 +136,7 @@ The next required tool is Perl - particularly if your running Windows.  You may 
 Sys.which('perl')
 ```
 
-If this code returns a path to perl.exe (i.e. `"C:\\STRAWB~1\\perl\\bin\\perl.exe"`) - your good to go. If this returns nothing (i.e. `""`) it is likely that Perl is not installed.  Before installing however let's check your `C:/` drive (or wherever your applications are stored).  Look for a directory named `Perl`, `ActivePerl`, or `Strawberry`.  If you see one of these perl is installed but not correctly configured (we'll get to that).  If you don't see any of these directories go [__here__](http://strawberryperl.com/) to install Strawberry Perl for Windows or [__here__](https://www.activestate.com/activeperl) to install ActiveState Perl for Mac or Linux.
+If this code returns a path to perl.exe (i.e. `'C:\\STRAWB~1\\perl\\bin\\perl.exe'`) - your good to go. If this returns nothing (i.e. `""`) it is likely that Perl is not installed.  Before installing however let's check your `C:` drive (or wherever your applications are stored).  Look for a directory named `Perl`, `ActivePerl`, or `Strawberry`.  If you see one of these perl is installed but not correctly configured (we'll get to that).  If you don't see any of these directories go [here](http://strawberryperl.com/) to install Strawberry Perl for Windows or [here](https://www.activestate.com/activeperl) to install ActiveState Perl for Mac or Linux.
 
 ### Installing Pandoc
 
@@ -146,7 +146,7 @@ Finally, we need to install Pandoc.  Once again check to see if Pandoc has alrea
 Sys.which('pandoc')
 ```
 
-If this returns a path to pandoc.exe - you're good.  If not, go [__here__](http://www.pandoc.org/installing.html) to install Pandoc for your OS.
+If this returns a path to pandoc.exe - you're good.  If not, go [here](http://www.pandoc.org/installing.html) to install Pandoc for your OS.
 
 ## Let's test it out
 
@@ -183,9 +183,9 @@ plot(mtcars$mpg,mtcars$hp,
      col  = "blue")
 ```
 
-For a detailed and in depth desriptions on how to make plots, and the different kinds that R is capable of creating, you can visit <http://www.statmethods.net/graphs/scatterplot.html>.
+For a detailed and in depth desriptions on how to make plots, and the different kinds that R is capable of creating, you can visit [this site](http://www.statmethods.net/graphs/scatterplot.html).
 
-The ggplot2 package has the ability to offer many more plotting options than the **plot()** command. You can learn more about ggplot2 by going to <http://docs.ggplot2.org/current/ggplot.html>. Creating a plot with ggplot2 will allow you to create publication quality plots with just a few lines of code by adding layers.
+The ggplot2 package has the ability to offer many more plotting options than the `plot()` command. You can learn more about ggplot2 by going to [here](http://docs.ggplot2.org/current/ggplot.html). Creating a plot with ggplot2 will allow you to create publication quality plots with just a few lines of code by adding layers.
 
 ## Text
 
@@ -235,7 +235,18 @@ $$\bar{Y}=\frac{\sum_{i=1}^N Y_i}{N}=\frac{`r sum(Y)`}{`r N`}$$
 
 ## Code Chunks
 
-R gives you the ability to show the code that that was used for any plot, table, or function. You start a code chunk with **```{r}** and end a code chunk with **```**. Let's use the code chunk for building plots above as an example of what you would see in a code chunk.
+R gives you the ability to show the code that that was used for any plot, table, or function. Code chunk are designated from the surrounding text as shown below 
+
+\begin{lstlisting}[language=R]
+```{r} # Denotes the start of a chunk
+code
+code
+code
+code
+``` # denotes the end of a chunk
+\end{lstlisting}
+
+Let's use the code chunk for building plots above as an example of what you would see in a code chunk.
 
 ```{r, eval=FALSE}
 plot(mtcars$mpg,mtcars$hp,
@@ -251,7 +262,7 @@ Code chunks have many options. You might choose to display a code chunk, like ab
 2+2
 ```
 
-For a complete list of code chunk options, visit this page <http://rmarkdown.rstudio.com/authoring_rcodechunks.html>.
+For a complete list of code chunk options, visit [this page](http://rmarkdown.rstudio.com/authoring_rcodechunks.html).
 
 ## Headings
 
@@ -285,7 +296,7 @@ The RefManageR and knitcitations packages provide functions to create citations 
 
 - Digital Object Identifiers for published articles
 - International Standard Book Numbers for published books
-- Or doi associated with them.  The knitcitations [`r citet(knitcitations)`] package allows us to easily cite papers by simply providing the doi.   
+- Or doi associated with them.  The knitcitations `r citet(knitcitations)`, `r citep(knitcitations)` package allows us to easily cite papers by simply providing the doi.   
 
 ## Citing published books with an ISBN
 
