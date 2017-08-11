@@ -1,5 +1,6 @@
 \documentclass[12pt,letterpaper,toc=flat,oneside]{report}
 \usepackage[top=1in,bottom=1.25in,hmargin=1.25in]{geometry}
+\usepackage{textcomp}
 \usepackage{setspace}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -52,35 +53,84 @@
 \definecolor{Green}{rgb}{0.0,0.42,0.24}
 \def\code{\bfseries}
 \usepackage{courier}
-\usepackage{listings}
-\lstset{ %
-language=R,
-basicstyle=\ttfamily\normalsize\color{black},
-numbers=left,
-numberstyle=\normalsize\color{black},
-%  backgroundcolor=\color{mygray},  % choose the background color
-%  fillcolor=\color{mygray},
-  rulesepcolor=\color{blue},
-  breaklines=false,   % automatic line breaking only at whitespace
-  captionpos=b,       % sets the caption-position to bottom
-  commentstyle=\color{Green}\bfseries,    % comment style
-  escapeinside={\%*}{*)},   % if you LaTeX within your code
-  lineskip=10pt,
-  keywordstyle=\color{red}\bfseries,       % keyword style
-  stringstyle=\color{black},     % string literal style
-  aboveskip=7pt,
-  belowskip=7pt,
-  frame=shadowbox,
-  framesep=5pt,
-  framexleftmargin=5mm,
-  rulesep=5pt,
-  framerule=1pt,
-  showstringspaces=false,
-  float=h,
-  rulecolor=\color{black},
-  emph={_},
-  emphstyle=\color{black}
-}%
+% \usepackage{listings}
+% \lstdefinestyle{Rinput}{ %
+% language=R,
+% basicstyle=\ttfamily\normalsize\color{black},
+% numbers=left,
+% numberstyle=\normalsize\color{black},
+% backgroundcolor=\color{white},  % choose the background color
+% fillcolor=\color{white},
+%   rulesepcolor=\color{white},
+%   breaklines=false,   % automatic line breaking only at whitespace
+%   captionpos=b,       % sets the caption-position to bottom
+%   commentstyle=\color{Green}\bfseries,    % comment style
+%   lineskip=10pt,
+%   keywordstyle=\color{red}\bfseries,       % keyword style
+%   stringstyle=\color{black},     % string literal style
+%   aboveskip=7pt,
+%   belowskip=7pt,
+%   frame=single,
+%   framesep=5pt,
+%   framexleftmargin=5mm,
+%   rulesep=5pt,
+%   framerule=1pt,
+%   showstringspaces=false,
+%   float=h,
+%   frameshape={RYR}{y}{y}{RYR},
+%   rulecolor=\color{black},
+%   emph={_},
+%   emphstyle=\color{black},
+%   keywordsprefix={(},
+%   linewidth=\textwidth,
+%   xleftmargin=5mm
+% }%
+% \lstdefinestyle{Routput}{ %
+% language=R,
+% basicstyle=\ttfamily\normalsize\color{blue},
+% backgroundcolor=\color{white},  % choose the background color
+% fillcolor=\color{white},
+%   rulesepcolor=\color{white},
+%   breaklines=false,   % automatic line breaking only at whitespace
+%   captionpos=b,       % sets the caption-position to bottom
+%   lineskip=10pt,
+%   aboveskip=7pt,
+%   belowskip=7pt,
+%   frame=single,
+%   framesep=5pt,
+%   rulesep=5pt,
+%   framerule=3pt,
+%   showstringspaces=false,
+%   float=h,
+%   frameshape={RYR}{y}{y}{RYR},
+%   rulecolor=\color{blue},
+%   emph={_},
+%   emphstyle=\color{blue}
+% }%
+% \lstset{ %
+% language=R,
+% basicstyle=\ttfamily\normalsize\color{red},
+% backgroundcolor=\color{mygray},  % choose the background color
+% fillcolor=\color{mygray},
+%   rulesepcolor=\color{mygray},
+%   breaklines=false,   % automatic line breaking only at whitespace
+%   captionpos=b,       % sets the caption-position to bottom
+%   lineskip=10pt,
+%   frame=single,
+%   framesep=5pt,
+%   rulesep=5pt,
+%   framerule=1pt,
+%   showstringspaces=false,
+%   float=h,
+%   frameshape={RYR}{y}{y}{RYR},
+%   rulecolor=\color{mygray},
+%   emph={_},
+%   emphstyle=\color{red}
+% }%
+% \newenvironment{Rchunk}{}{}
+% \lstnewenvironment{Rinput}{\lstset{style=Rinput}}{}
+% \lstnewenvironment{Rcode}{\lstset{style=Rinline}}{}
+% \lstnewenvironment{Routput}{\lstset{style=Routput}}{}
 $if(highlighting-macros)$
 $highlighting-macros$
 $endif$
