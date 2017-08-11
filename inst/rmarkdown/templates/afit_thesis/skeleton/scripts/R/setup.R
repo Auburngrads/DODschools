@@ -17,6 +17,7 @@ knitr::knit_hooks$set(
         las = 1)  }
 })
 
+
 knitr::knit_hooks$set(
   
   source = function(x, options){
