@@ -70,6 +70,7 @@ cite_style: "`r DODschools::noTouch('metadata.yml')$cite_style`"
 cite_shape: "`r DODschools::noTouch('metadata.yml')$cite_shape`"
 output: 
   DODschools::afit_thesis:
+    highlight: tango
     includes:
       in_header:    scripts/tex/in_header.tex
       before_body:  scripts/tex/before_body.tex
@@ -237,14 +238,6 @@ $$\bar{Y}=\frac{\sum_{i=1}^N Y_i}{N}=\frac{`r sum(Y)`}{`r N`}$$
 
 R gives you the ability to show the code that that was used for any plot, table, or function. Code chunk are designated from the surrounding text as shown below 
 
-\begin{lstlisting}[language=R]
-```{r} # Denotes the start of a chunk
-code
-code
-code
-code
-``` # denotes the end of a chunk
-\end{lstlisting}
 
 Let's use the code chunk for building plots above as an example of what you would see in a code chunk.
 
