@@ -11,7 +11,9 @@
 #' @param toc Should a table of contents be created?
 #' @param template The TeX template used
 #' @param format The format of the document
-#'
+#' @param highlight Highlight color template for code chunks
+#' @param xtab_caption_placement Placement of captions for tables created using the \code{xtable} package 
+#' @param xtab_comment Logical variable whether the \code{xtable} timestamp should be printed
 #' @return R Markdown output format to pass to \code{\link[rmarkdown::render]{render}}
 #'
 #' @importFrom bookdown pdf_document2
@@ -33,7 +35,12 @@ afit_thesis <- function(...,
                         toc = TRUE,
                         template = "templateb.tex",
                         format = "afit_thesis",
-                        highlight = 'default') {
+                        highlight = 'default',
+                        xtab_caption_placement = 'top',
+                        xtab_comment = FALSE) {
+  
+  options("xtable.caption.placement" = xtab_caption_placement)
+  options("xtable.comment" = xtab_comment)
   
   thesis <- system.file("rmarkdown",
                         'templates',
