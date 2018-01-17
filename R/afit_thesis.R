@@ -40,6 +40,7 @@ afit_thesis <- function(...,
                         xtab_comment = FALSE) {
   
   options("xtable.caption.placement" = xtab_caption_placement)
+  options("xtable.table.placement" = 'H')
   options("xtable.comment" = xtab_comment)
   
   thesis <- system.file("rmarkdown",
