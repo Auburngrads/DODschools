@@ -68,6 +68,7 @@ sf298_date: "`r format(Sys.Date(), '%d-%m-%Y')`"
 dissertation: "`r DODschools::noTouch('metadata.yml')$dissertation`"
 cite_style: "`r DODschools::noTouch('metadata.yml')$cite_style`"
 cite_shape: "`r DODschools::noTouch('metadata.yml')$cite_shape`"
+num_cite:   "`r DODschools::noTouch('metadata.yml')$num_cite`"
 output: 
   DODschools::afit_thesis:
     highlight: tango
