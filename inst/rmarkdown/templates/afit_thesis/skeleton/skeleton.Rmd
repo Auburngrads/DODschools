@@ -23,7 +23,7 @@ advisor:
   department: "`r DODschools::noTouch('metadata.yml')$advisor$department`"
   rank:       "`r DODschools::noTouch('metadata.yml')$advisor$rank`"
   service:    "`r DODschools::noTouch('metadata.yml')$advisor$service`"
-  degree:     "`r DODschools::noTouch('metadata.yml')$advisor$currentDegree`"
+  prevdegree: "`r DODschools::noTouch('metadata.yml')$advisor$currentDegree`"
   phone:      "`r DODschools::noTouch('metadata.yml')$advisor$phone`"
   email:      "`r DODschools::noTouch('metadata.yml')$advisor$email`"
 reader1:
