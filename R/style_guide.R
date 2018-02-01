@@ -3,8 +3,10 @@
 #' @importFrom utils browseURL
 #'
 #' @description This function from to complete an AFIT Thesis, the
-#' @export
 #' 
+#' @param school Character string indicating which school's Style Guide is desired
+#' 
+#' @export
 style_guide <- function(school = 'afit') {
 
   if(tolower(school)=='afit') {

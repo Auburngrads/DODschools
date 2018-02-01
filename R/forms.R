@@ -131,6 +131,7 @@ rmarkdown::pdf_document(...,
 #'   
 #' @param yml \code{character} Path to the metadata.yml file
 #' @param which A \code{numeric} ID corresponding to the form to be built. If \code{NULL} (default), all forms are built. (see details) 
+#' @param ... Currently not used
 #'
 #' @details This function should only be used after a template directory has been created.
 #'          When invoked, this function reads the YAML metadata contained within 

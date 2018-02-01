@@ -83,7 +83,7 @@ inherit_pdf_document2 <- function(...) {
 pdf_document_format <- function(..., format, template, csl = NULL) {
 
   # base format
-  fmt <- inherit_pdf_document(..., template = find_resource(format, template))
+  fmt <- inherit_pdf_document2(..., template = find_resource(format, template))
 
   # add csl to pandoc_args
   #' @importFrom rmarkdown pandoc_path_arg

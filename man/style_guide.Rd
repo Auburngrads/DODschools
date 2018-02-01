@@ -6,6 +6,9 @@
 \usage{
 style_guide(school = "afit")
 }
+\arguments{
+\item{school}{Character string indicating which school's Style Guide is desired}
+}
 \description{
 This function from to complete an AFIT Thesis, the
 }

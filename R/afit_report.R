@@ -22,7 +22,7 @@
 #' rmarkdown::draft("MyThesis.Rmd", template = "afit_report", package = "AFIT")
 #' }
 #'
-#' @seealso \code{\link{style_guide(school = 'afit')}}
+#' @seealso \code{\link{style_guide}}
 #'
 #' @export
 afit_report <- function(...,

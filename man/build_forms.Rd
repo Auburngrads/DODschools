@@ -10,6 +10,8 @@ build_forms(yml = "metadata.yml", which = NULL, ...)
 \item{yml}{\code{character} Path to the metadata.yml file}
 
 \item{which}{A \code{numeric} ID corresponding to the form to be built. If \code{NULL} (default), all forms are built. (see details)}
+
+\item{...}{Currently not used}
 }
 \description{
 Automatically create and fill forms required for 

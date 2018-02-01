@@ -7,9 +7,11 @@
 STYLE GUIDE FOR AFIT DISSERTATIONS, THESES AND GRADUATE RESEARCH PAPERS - July 2015
 }
 \usage{
-afit_thesis(..., keep_tex = FALSE, md_extensions = c("-autolink_bare_uris"),
-  fig_caption = TRUE, toc = TRUE, template = "templateb.tex",
-  format = "afit_thesis")
+afit_thesis(..., keep_tex = !FALSE,
+  md_extensions = c("-autolink_bare_uris"), fig_caption = TRUE,
+  toc = TRUE, template = "templateb.tex", format = "afit_thesis",
+  highlight = "default", xtab_caption_placement = "top",
+  xtab_comment = FALSE)
 }
 \arguments{
 \item{...}{Arguments to \code{rmarkdown::pdf_document}}
@@ -25,9 +27,15 @@ afit_thesis(..., keep_tex = FALSE, md_extensions = c("-autolink_bare_uris"),
 \item{template}{The TeX template used}
 
 \item{format}{The format of the document}
+
+\item{highlight}{Highlight color template for code chunks}
+
+\item{xtab_caption_placement}{Placement of captions for tables created using the \code{xtable} package}
+
+\item{xtab_comment}{Logical variable whether the \code{xtable} timestamp should be printed}
 }
 \value{
-R Markdown output format to pass to \code{\link[rmarkdown::render]{render}}
+R Markdown output format to pass to \code{rmarkdown::render}
 }
 \description{
 Create an AFIT thesis using rmarkdown
@@ -40,5 +48,5 @@ rmarkdown::draft("MyThesis.Rmd", template = "afit_thesis", package = "DODschools
 
 }
 \seealso{
-\code{\link{style_guide(school = 'afit')}}
+\code{\link{style_guide}}
 }

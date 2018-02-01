@@ -14,7 +14,7 @@
 #' @param highlight Highlight color template for code chunks
 #' @param xtab_caption_placement Placement of captions for tables created using the \code{xtable} package 
 #' @param xtab_comment Logical variable whether the \code{xtable} timestamp should be printed
-#' @return R Markdown output format to pass to \code{\link[rmarkdown::render]{render}}
+#' @return R Markdown output format to pass to \code{rmarkdown::render}
 #'
 #' @importFrom bookdown pdf_document2
 #' @importFrom rmarkdown pandoc_highlight_args
@@ -25,7 +25,7 @@
 #' rmarkdown::draft("MyThesis.Rmd", template = "afit_thesis", package = "DODschools")
 #' }
 #'
-#' @seealso \code{\link{style_guide(school = 'afit')}}
+#' @seealso \code{\link{style_guide}}
 #' 
 #' @export
 afit_thesis <- function(...,

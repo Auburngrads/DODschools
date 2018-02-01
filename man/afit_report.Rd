@@ -40,5 +40,5 @@ rmarkdown::draft("MyThesis.Rmd", template = "afit_report", package = "AFIT")
 
 }
 \seealso{
-\code{\link{style_guide(school = 'afit')}}
+\code{\link{style_guide}}
 }
