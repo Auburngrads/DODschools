@@ -1,8 +1,8 @@
 Package: DODschools
 Type: Package
 Title: Academic Document Templates for Department of Defense Schools
-Version: 1.0.1
-Date: 2017-07-02
+Version: 1.0.2
+Date: 2018-02-01
 Authors@R: c(
     person("Jason", "Freels" , , "auburngrads@live.edu"  , role = c("aut", "cre")),
     person("Corey", "Degroot", , "corey.degroot@us.af.mil", role = "ctb"),
@@ -34,7 +34,8 @@ Imports: utils,
          xtable,
          devtools,
          stringr,
-         bookdown
+         bookdown,
+         DiagrammeR
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
 NeedsCompilation: no
