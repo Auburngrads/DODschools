@@ -109,10 +109,15 @@ noTouch <- function(file = NULL) {
   
   checkIT <- function(x) {
    
-    if(is.na(pmatch('no',yaml::as.yaml(x)))) { return(x)
+    if(grepl('no',yaml::as.yaml(x))) { 
       
-    } else { return(NULL)}
-    
+      return(NULL)
+      
+    } else { 
+      
+      return(x)
+      
+    }
   }
   
   yaml$distribution_reason$dms <- checkIT(yaml$distribution_reason$dms)
@@ -158,6 +163,7 @@ noTouch <- function(file = NULL) {
 
   yaml$cite_style <- `if`(yaml$numeric_citations, 'numbers', 'authoryear')
   yaml$cite_shape <- `if`(yaml$numeric_citations, 'square' , 'round')
+  yaml$num_cite   <- checkIT(yaml$numeric_citations)
   
   return(yaml)
 }
