@@ -30,8 +30,12 @@
 \usepackage{flafter}
 \usepackage{amssymb,amsmath,amsfonts}
 %\usepackage{theorem}  % uncomment if using rmarkdown::pdf_document
-\usepackage[$if(cite_style)$$cite_style$$endif$,$if(cite_shape)$$cite_shape$$endif$]{natbib}
+\usepackage[$if(cite_style)$$cite_style$$endif$,$if(cite_shape)$$cite_shape$$endif$,sort]{natbib}
+$if(num_cite)$
+\bibliographystyle{unsrtnat}
+$else$
 \bibliographystyle{abbrvnat}
+$endif$
 \usepackage{varioref} 
 %\usepackage{tocbibind} 
 \usepackage{xspace}

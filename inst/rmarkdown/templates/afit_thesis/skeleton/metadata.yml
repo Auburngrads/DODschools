@@ -94,5 +94,5 @@ sponsor:
   email: 'first.last@afit.edu'
   acronym: 'AFIT'
   report_number: ''
-numeric_citations: yes
+numeric_citations: no
 
