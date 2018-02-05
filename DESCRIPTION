@@ -42,3 +42,4 @@ NeedsCompilation: no
 URL: https://github.com/Auburngrads/DODschools
 BugReports: https://github.com/Auburngrads/DODschools/issues
 Encoding: UTF-8
+Suggests: testthat
