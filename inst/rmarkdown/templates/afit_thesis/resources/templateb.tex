@@ -2,6 +2,15 @@
 \usepackage[top=1in,bottom=1.25in,hmargin=1.25in]{geometry}
 \usepackage{textcomp}
 \usepackage{setspace}
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
+\makeatletter
+% \patchcmd{<cmd>}{<search>}{<replace>}{<succes>}{<failure>}
+\patchcmd{\@chapter}{\addtocontents{lof}{\protect\addvspace{10\p@}}}{}{}{}% LoF
+\patchcmd{\@chapter}{\addtocontents{lot}{\protect\addvspace{10\p@}}}{}{}{}% LoT
+\makeatother
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \DeclareUnicodeCharacter{2122}{!!!!I-AM-HERE!!!!!}
