@@ -37,6 +37,10 @@
 \usepackage{indentfirst}
 \usepackage{float}
 \usepackage{flafter}
+\usepackage[titles]{tocloft}
+\setlength\cftbeforechapskip{100pt}
+\renewcommand\cftfigafterpnum{\vskip10pt\par}
+\renewcommand\cfttabafterpnum{\vskip10pt\par}
 \usepackage{amssymb,amsmath,amsfonts}
 %\usepackage{theorem}  % uncomment if using rmarkdown::pdf_document
 \usepackage[$if(cite_style)$$cite_style$$endif$,$if(cite_shape)$$cite_shape$$endif$,sort]{natbib}
