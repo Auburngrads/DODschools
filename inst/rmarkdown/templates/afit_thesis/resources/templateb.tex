@@ -239,7 +239,9 @@ $endif$
 {\contentslabel}                          % unnumbered format
 {\titlerule*[0.5pc]{.}\contentspage}      % filler-page-format, e.g dot
 [\vspace{1pt}]                            % below code 
-
+$for(header-includes)$
+$header-includes$
+$endfor$
 \begin{document}
 \citeindextrue
 % \setlength{\abovedisplayskip}{0pt}
@@ -499,7 +501,13 @@ $endif$
 \doublespacing
 \setcounter{page}{1}
 	\renewcommand{\thepage}{\arabic{page}}
+$for(include-before)$
+$include-before$
+$endfor$
 $body$
+$for(include-after)$
+$include-after$
+$endfor$
 \newpage
 %==================================================================
 %    		Bibliography              
