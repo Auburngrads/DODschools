@@ -13,12 +13,14 @@
 \patchcmd{\@chapter}{\addtocontents{lot}{\protect\addvspace{10\p@}}}{}{}{}% LoT
 \makeatother
 \usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage[utf8]{inputenc}
 \DeclareUnicodeCharacter{2122}{!!!!I-AM-HERE!!!!!}
 \usepackage[pdftex]{graphicx}
 \DeclareGraphicsExtensions{.jpg, .pdf, .png}
 \usepackage{color}
-\usepackage{xcolor}
+\usepackage{pdfrender,xcolor}
+\pdfrender{StrokeColor=black,TextRenderingMode=2,LineWidth=0.2pt}
 \usepackage[linktocpage=true]{hyperref}
 \hypersetup{%
     colorlinks,
