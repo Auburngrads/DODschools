@@ -4,8 +4,12 @@
 \alias{training_report}
 \title{Air Force Training Report}
 \usage{
-training_report(..., keep_tex = FALSE,
-  md_extensions = c("-autolink_bare_uris"), template = "trainingReport.tex")
+training_report(
+  ...,
+  keep_tex = FALSE,
+  md_extensions = c("-autolink_bare_uris"),
+  template = "trainingReport.tex"
+)
 }
 \arguments{
 \item{...}{Arguments to \code{rmarkdown::pdf_document}}
