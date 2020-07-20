@@ -4,8 +4,12 @@
 \alias{distro_form}
 \title{Air Force Document Distribution Statement Form}
 \usage{
-distro_form(..., keep_tex = FALSE, md_extensions = c("-autolink_bare_uris"),
-  template = "distroForm.tex")
+distro_form(
+  ...,
+  keep_tex = FALSE,
+  md_extensions = c("-autolink_bare_uris"),
+  template = "distroForm.tex"
+)
 }
 \arguments{
 \item{...}{Arguments to \code{rmarkdown::pdf_document}}
