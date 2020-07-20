@@ -4,12 +4,26 @@
 \alias{afit_presentation}
 \title{Create an AFIT Presentation}
 \usage{
-afit_presentation(..., logo = NULL, template = "default.html",
-  format = "afit_presentation", incremental = FALSE, fig_width = 8,
-  fig_height = 4.9, self_contained = F, smart = FALSE, css = NULL,
-  js = NULL, highlight = "default", pandoc_args = NULL, duration = NULL,
-  footer = NULL, includes = NULL, mathjax = "default",
-  font_adjustment = 0)
+afit_presentation(
+  ...,
+  logo = NULL,
+  template = "default.html",
+  format = "afit_presentation",
+  incremental = FALSE,
+  fig_width = 8,
+  fig_height = 4.9,
+  self_contained = F,
+  smart = FALSE,
+  css = NULL,
+  js = NULL,
+  highlight = "default",
+  pandoc_args = NULL,
+  duration = NULL,
+  footer = NULL,
+  includes = NULL,
+  mathjax = "default",
+  font_adjustment = 0
+)
 }
 \arguments{
 \item{...}{extra stuff}
