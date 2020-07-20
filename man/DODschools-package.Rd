@@ -6,7 +6,14 @@
 \alias{DODschools-package}
 \title{DODschools: Academic Document Templates for Department of Defense Schools}
 \description{
-DODschools: Academic Document Templates for Department of Defense Schools
+Rmarkdown document and presentation templates comforming to the style guides for 
+    Department of Defense (DoD) academic institutions. As of Verison 1.0.0, templates 
+    have been developed for the DoD graduate schools: the Air Force Institute of Technology 
+    (AFIT) and the Naval Postgraduate School (NPS).  Subsequent versions will include 
+    templates for the United States Military Academy (USMA), the United States Naval Academy 
+    (USNA), and the United States Air Force Academy (USAFA).  Includes functions to 
+    auto-generate required forms and import reference metadata from works published to the 
+    Defense Technical Information Center (DTIC).
 }
 \seealso{
 Useful links:
