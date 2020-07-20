@@ -4,9 +4,15 @@
 \alias{afit_report}
 \title{Air Force Institute of Technology Prospectus Template}
 \usage{
-afit_report(..., keep_tex = TRUE, md_extensions = c("-autolink_bare_uris"),
-  fig_caption = TRUE, toc = TRUE, template = "template.tex",
-  format = "afit_report")
+afit_report(
+  ...,
+  keep_tex = TRUE,
+  md_extensions = c("-autolink_bare_uris"),
+  fig_caption = TRUE,
+  toc = TRUE,
+  template = "template.tex",
+  format = "afit_report"
+)
 }
 \arguments{
 \item{...}{Arguments to \code{rmarkdown::pdf_document}}
