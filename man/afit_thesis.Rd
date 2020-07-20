@@ -7,11 +7,18 @@
 STYLE GUIDE FOR AFIT DISSERTATIONS, THESES AND GRADUATE RESEARCH PAPERS - July 2015
 }
 \usage{
-afit_thesis(..., keep_tex = !FALSE,
-  md_extensions = c("-autolink_bare_uris"), fig_caption = TRUE,
-  toc = TRUE, template = "templateb.tex", format = "afit_thesis",
-  highlight = "default", xtab_caption_placement = "top",
-  xtab_comment = FALSE)
+afit_thesis(
+  ...,
+  keep_tex = !FALSE,
+  md_extensions = c("-autolink_bare_uris"),
+  fig_caption = TRUE,
+  toc = TRUE,
+  template = "templateb.tex",
+  format = "afit_thesis",
+  highlight = "default",
+  xtab_caption_placement = "top",
+  xtab_comment = FALSE
+)
 }
 \arguments{
 \item{...}{Arguments to \code{rmarkdown::pdf_document}}
