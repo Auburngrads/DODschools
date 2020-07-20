@@ -4,9 +4,15 @@
 \alias{ieee_article}
 \title{Air Force Institute of Technology Thesis Template}
 \usage{
-ieee_article(..., keep_tex = TRUE, md_extensions = c("-autolink_bare_uris"),
-  fig_caption = TRUE, toc = TRUE, template = "templateb.tex",
-  format = "ieee_article")
+ieee_article(
+  ...,
+  keep_tex = TRUE,
+  md_extensions = c("-autolink_bare_uris"),
+  fig_caption = TRUE,
+  toc = TRUE,
+  template = "templateb.tex",
+  format = "ieee_article"
+)
 }
 \arguments{
 \item{...}{Arguments to \code{rmarkdown::pdf_document}}
