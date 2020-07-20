@@ -1,0 +1,5 @@
+name: Canvas Module
+description: >
+ Build modules in accordance with the Canvas API
+create_dir: true
+
