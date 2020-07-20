@@ -4,9 +4,15 @@
 \alias{spie_article}
 \title{Air Force Institute of Technology Thesis Template}
 \usage{
-spie_article(..., keep_tex = FALSE,
-  md_extensions = c("-autolink_bare_uris"), fig_caption = TRUE,
-  toc = TRUE, template = "templateb.tex", format = "spie_article")
+spie_article(
+  ...,
+  keep_tex = FALSE,
+  md_extensions = c("-autolink_bare_uris"),
+  fig_caption = TRUE,
+  toc = TRUE,
+  template = "templateb.tex",
+  format = "spie_article"
+)
 }
 \arguments{
 \item{...}{Arguments to \code{rmarkdown::pdf_document}}
