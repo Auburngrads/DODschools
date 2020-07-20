@@ -4,8 +4,12 @@
 \alias{sf298}
 \title{Air Force Form SF 298}
 \usage{
-sf298(..., keep_tex = FALSE, md_extensions = c("-autolink_bare_uris"),
-  template = "sf298.tex")
+sf298(
+  ...,
+  keep_tex = FALSE,
+  md_extensions = c("-autolink_bare_uris"),
+  template = "sf298.tex"
+)
 }
 \arguments{
 \item{...}{Arguments to \code{rmarkdown::pdf_document}}
