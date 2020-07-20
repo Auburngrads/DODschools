@@ -4,8 +4,12 @@
 \alias{signature_form}
 \title{Air Force Thesis Electronic Signature Form}
 \usage{
-signature_form(..., keep_tex = FALSE,
-  md_extensions = c("-autolink_bare_uris"), template = "signatureForm.tex")
+signature_form(
+  ...,
+  keep_tex = FALSE,
+  md_extensions = c("-autolink_bare_uris"),
+  template = "signatureForm.tex"
+)
 }
 \arguments{
 \item{...}{Arguments to \code{rmarkdown::pdf_document}}
