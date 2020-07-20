@@ -4,9 +4,15 @@
 \alias{afit_far}
 \title{Air Force Institute of Technology Thesis Template}
 \usage{
-afit_far(..., keep_tex = TRUE, md_extensions = c("-autolink_bare_uris"),
-  fig_caption = TRUE, toc = TRUE, template = "template.tex",
-  format = "afit_far")
+afit_far(
+  ...,
+  keep_tex = TRUE,
+  md_extensions = c("-autolink_bare_uris"),
+  fig_caption = TRUE,
+  toc = TRUE,
+  template = "template.tex",
+  format = "afit_far"
+)
 }
 \arguments{
 \item{...}{Arguments to \code{rmarkdown::pdf_document}}
