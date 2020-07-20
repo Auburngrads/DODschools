@@ -4,9 +4,14 @@
 \alias{public_affairs}
 \title{Air Force Public Affairs Review Form}
 \usage{
-public_affairs(..., keep_tex = FALSE,
-  md_extensions = c("-autolink_bare_uris"), fig_caption = FALSE,
-  toc = FALSE, template = "PAform.tex")
+public_affairs(
+  ...,
+  keep_tex = FALSE,
+  md_extensions = c("-autolink_bare_uris"),
+  fig_caption = FALSE,
+  toc = FALSE,
+  template = "PAform.tex"
+)
 }
 \arguments{
 \item{...}{Arguments to \code{rmarkdown::pdf_document}}
