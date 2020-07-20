@@ -7,9 +7,19 @@
 http://www.ottobib.com/
 }
 \usage{
-citeISBN(isbn = NULL, preview = TRUE, bibtype = NULL, key = NULL,
-  author = NULL, title = NULL, publisher = NULL, year = NULL,
-  address = NULL, style = "bibtex", ...)
+citeISBN(
+  isbn = NULL,
+  preview = TRUE,
+  bibtype = NULL,
+  key = NULL,
+  author = NULL,
+  title = NULL,
+  publisher = NULL,
+  year = NULL,
+  address = NULL,
+  style = "bibtex",
+  ...
+)
 }
 \arguments{
 \item{isbn}{An international standard book number (ISBN-13 or ISBN-10)}
