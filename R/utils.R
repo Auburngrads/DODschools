@@ -94,3 +94,14 @@ pdf_document_format <- function(..., format, template, csl = NULL) {
   # return format
   fmt
 }
+
+
+#' Inherits properties from an existing html document
+#' @description Calls rmarkdown::html_document and marks the return value as inheriting html_document
+#' @importFrom rmarkdown html_document
+#' @param ... arguments sent to \code{rmarkdown::html_document}
+inherit_html_document <- function(...) {
+  fmt <- rmarkdown::html_document(...)
+  fmt$inherits <- "html_document"
+  fmt
+}
