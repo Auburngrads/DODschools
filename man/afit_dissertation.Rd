@@ -4,9 +4,15 @@
 \alias{afit_dissertation}
 \title{Air Force Institute of Technology Dissertation Template}
 \usage{
-afit_dissertation(..., keep_tex = TRUE,
-  md_extensions = c("-autolink_bare_uris"), fig_caption = TRUE,
-  toc = TRUE, template = "template.tex", format = "afit_dissertation")
+afit_dissertation(
+  ...,
+  keep_tex = TRUE,
+  md_extensions = c("-autolink_bare_uris"),
+  fig_caption = TRUE,
+  toc = TRUE,
+  template = "template.tex",
+  format = "afit_dissertation"
+)
 }
 \arguments{
 \item{...}{Arguments to \code{rmarkdown::pdf_document}}
