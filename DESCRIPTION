@@ -37,7 +37,7 @@ Imports: utils,
          bookdown,
          DiagrammeR
 VignetteBuilder: knitr
-RoxygenNote: 6.0.1
+RoxygenNote: 7.0.2
 NeedsCompilation: no
 URL: https://github.com/Auburngrads/DODschools
 BugReports: https://github.com/Auburngrads/DODschools/issues
